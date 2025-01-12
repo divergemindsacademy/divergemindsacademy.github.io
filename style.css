@@ -145,7 +145,6 @@ a, button {
 .menu {
 	cursor: pointer;
 	width: 30px;
-	height: 30px;
 	display: none;
 }
 .side-menu {
