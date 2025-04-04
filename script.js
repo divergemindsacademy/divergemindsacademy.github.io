@@ -167,6 +167,7 @@ function sideMenu(side) {
   side++;
 }
 
+
 function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var email = e.parameter.email;
@@ -175,4 +176,20 @@ function doPost(e) {
   return ContentService
     .createTextOutput(JSON.stringify({ result: "success" }))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = [
+    new Date(),
+    e.parameter.fname,
+    e.parameter.lname,
+    e.parameter.mail,
+    e.parameter.message,
+    e.parameter.additional
+  ];
+  sheet.appendRow(data);
+
+  return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
 }
