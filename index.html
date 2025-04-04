@@ -228,5 +228,30 @@
 		</div>
 	</footer>
 
+<script>
+  document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.querySelector('.txtb').value;
+    
+    fetch('https://script.google.com/macros/s/AKfycbyeFHZmF9ziFzSkIuLvkIeL-SHc8MXsXezGRgH1OKVJbI7EMfkP5mtZhHPOeHbPnWbqQQ/exec', {
+      method: 'POST',
+      body: new URLSearchParams(`email=${email}`),
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    })
+    .then(res => res.text())
+    .then(data => {
+      alert("Thank you! Your email has been submitted.");
+      document.querySelector('.txtb').value = ""; // clear input
+    })
+    .catch(err => {
+      console.error("Error:", err);
+      alert("Oops! Something went wrong.");
+    });
+  });
+</script>
+
 </body>
 </html>
