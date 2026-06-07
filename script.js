@@ -19,11 +19,14 @@ window.addEventListener('scroll', scrollAppear);
 // ============================
 function sideMenu(side) {
 	var menu = document.getElementById('side-menu');
+	if (!menu) return;
+
 	if (side == 0) {
-		menu.style.transform = 'translateX(0)';
-		menu.style.position = 'fixed';
+		menu.classList.add('open');
+		document.body.classList.add('no-scroll');
 	} else {
-		menu.style.transform = 'translateX(-100%)';
+		menu.classList.remove('open');
+		document.body.classList.remove('no-scroll');
 	}
 }
 
