@@ -1,195 +1,189 @@
-// Changing the style of scroll bar
-// window.onscroll = function() {myFunction()};
-		
-// function myFunction() {
-// 	var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-// 	var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-// 	var scrolled = (winScroll / height) * 100;
-// 	document.getElementById("myBar").style.width = scrolled + "%"; 
-// }
-
+// ============================
+// Scroll Appear (original, kept)
+// ============================
 function scrollAppear() {
-  var introText = document.querySelector('.side-text');
-  var sideImage = document.querySelector('.sideImage');
-  var introPosition = introText.getBoundingClientRect().top;
-  var imagePosition = sideImage.getBoundingClientRect().top;
-  
-  var screenPosition = window.innerHeight / 1.2;
-
-  if(introPosition < screenPosition) {
-    introText.classList.add('side-text-appear');
-  }
-  if(imagePosition < screenPosition) {
-    sideImage.classList.add('sideImage-appear');
-  }
+	var elements = document.querySelectorAll('.side-text, .sideImage');
+	elements.forEach(function(el) {
+		var position = el.getBoundingClientRect().top;
+		var screenPosition = window.innerHeight / 1.2;
+		if (position < screenPosition) {
+			if (el.classList.contains('side-text')) el.classList.add('side-text-appear');
+			if (el.classList.contains('sideImage')) el.classList.add('sideImage-appear');
+		}
+	});
 }
-
 window.addEventListener('scroll', scrollAppear);
 
-// For switching between navigation menus in mobile mode
+// ============================
+// Side Menu
+// ============================
+function sideMenu(side) {
+	var menu = document.getElementById('side-menu');
+	if (side == 0) {
+		menu.style.transform = 'translateX(0)';
+		menu.style.position = 'fixed';
+	} else {
+		menu.style.transform = 'translateX(-100%)';
+	}
+}
+
+// ============================
+// Navigation switch (mobile legacy)
+// ============================
 var i = 2;
 function switchTAB() {
-	var x = document.getElementById("list-switch");
-	if(i%2 == 0) {
-		document.getElementById("list-switch").style= "display: grid; height: 50vh; margin-left: 5%;";
-		document.getElementById("search-switch").style= "display: block; margin-left: 5%;";
-	}else {
-		document.getElementById("list-switch").style= "display: none;";
-		document.getElementById("search-switch").style= "display: none;";
+	if (i % 2 == 0) {
+		var ls = document.getElementById("list-switch");
+		var ss = document.getElementById("search-switch");
+		if (ls) ls.style = "display: grid; height: 50vh; margin-left: 5%;";
+		if (ss) ss.style = "display: block; margin-left: 5%;";
+	} else {
+		var ls = document.getElementById("list-switch");
+		var ss = document.getElementById("search-switch");
+		if (ls) ls.style = "display: none;";
+		if (ss) ss.style = "display: none;";
 	}
 	i++;
 }
 
-// For LOGIN
-var x = document.getElementById("login");
-var y = document.getElementById("register");
-var z = document.getElementById("btn");
-var a = document.getElementById("log");
-var b = document.getElementById("reg");
-var w = document.getElementById("other");
+// ============================
+// Search slide (original kept)
+// ============================
+function slide() {
+	var srch = document.querySelector('.search');
+	if (srch) {
+		srch.style.width = srch.style.width === '150px' ? '0' : '150px';
+		srch.style.transition = 'width 0.4s ease';
+	}
+}
 
+// ============================
+// Login / Register (original kept)
+// ============================
 function register() {
-  x.style.left = "-400px";
-  y.style.left = "50px";
-  z.style.left = "110px";
-  w.style.visibility = "hidden";
-  b.style.color = "#fff";
-  a.style.color = "#000";
+	var x = document.getElementById("login");
+	var y = document.getElementById("register");
+	var z = document.getElementById("btn");
+	var a = document.getElementById("log");
+	var b = document.getElementById("reg");
+	var w = document.getElementById("other");
+	if (x) x.style.left = "-400px";
+	if (y) y.style.left = "50px";
+	if (z) z.style.left = "110px";
+	if (w) w.style.visibility = "hidden";
+	if (b) b.style.color = "#fff";
+	if (a) a.style.color = "#000";
 }
 
 function login() {
-  x.style.left = "50px";
-  y.style.left = "450px";
-  z.style.left = "0px";
-  w.style.visibility = "visible";
-  a.style.color = "#fff";
-  b.style.color = "#000";
-}
-  
-// CheckBox Function
-function goFurther(){
-  if (document.getElementById("chkAgree").checked == true) {
-    document.getElementById('btnSubmit').style = 'background: linear-gradient(to right, #FA4B37, #DF2771);';
-  }
-  else{
-    document.getElementById('btnSubmit').style = 'background: lightgray;';
-  }
+	var x = document.getElementById("login");
+	var y = document.getElementById("register");
+	var z = document.getElementById("btn");
+	var a = document.getElementById("log");
+	var b = document.getElementById("reg");
+	var w = document.getElementById("other");
+	if (x) x.style.left = "50px";
+	if (y) y.style.left = "450px";
+	if (z) z.style.left = "0px";
+	if (w) w.style.visibility = "visible";
+	if (a) a.style.color = "#fff";
+	if (b) b.style.color = "#000";
 }
 
+// ============================
+// Checkbox (original kept)
+// ============================
+function goFurther() {
+	var chk = document.getElementById("chkAgree");
+	var btn = document.getElementById('btnSubmit');
+	if (!chk || !btn) return;
+	if (chk.checked) {
+		btn.style.background = 'linear-gradient(to right, #FA4B37, #DF2771)';
+	} else {
+		btn.style.background = 'lightgray';
+	}
+}
+
+// ============================
+// Google auth (original kept)
+// ============================
 function google() {
-  	window.location.assign("https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue&csig=AF-SEnbZHbi77CbAiuHE%3A1585466693&flowName=GlifWebSignIn&flowEntry=AddSession", "_blank");
+	window.location.assign("https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue&csig=AF-SEnbZHbi77CbAiuHE%3A1585466693&flowName=GlifWebSignIn&flowEntry=AddSession");
 }
 
-// QUIZ Page
+// ============================
+// Quiz page functions (original kept)
+// ============================
 function quizt(frame) {
-  document.getElementById('f1').style='display: none;';
-  document.getElementById('f2').style='display: none;';
-  document.getElementById('f3').style='display: none;';
-  document.getElementById('f4').style='display: none;';
-  document.getElementById('f5').style='display: none;';
-  document.getElementById('f6').style='display: none;';
-  document.getElementById('f7').style='display: none;';
-  document.getElementById('f8').style='display: none;';
-  document.getElementById('f9').style='display: none;';
-  document.getElementById('f10').style='display: none;';
-  document.getElementById('f11').style='display: none;';
-  if(frame == 1) document.getElementById('f1').style = 'display: block';
-  else if(frame == 2) document.getElementById('f2').style = 'display: block';
-  else if(frame == 3) document.getElementById('f3').style = 'display: block';
-  else if(frame == 4) document.getElementById('f4').style = 'display: block';
-  else if(frame == 5) document.getElementById('f5').style = 'display: block';
-  else if(frame == 6) document.getElementById('f6').style = 'display: block';
-  else if(frame == 7) document.getElementById('f7').style = 'display: block';
-  else if(frame == 8) document.getElementById('f8').style = 'display: block';
-  else if(frame == 9) document.getElementById('f9').style = 'display: block';
-  else if(frame == 10) document.getElementById('f10').style = 'display: block';
-  else if(frame == 11) document.getElementById('f11').style = 'display: block'; 
-  else alert('error');
+	var frames = ['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11'];
+	frames.forEach(function(id) {
+		var el = document.getElementById(id);
+		if (el) el.style.display = 'none';
+	});
+	var target = document.getElementById('f' + frame);
+	if (target) target.style.display = 'block';
+	else if (frame < 1 || frame > 11) alert('error');
 }
 
 function startquiz() {
-  document.getElementById('title').style = 'display: none;'; 
-
-  document.getElementById('panel').style = 'display: inline-flex;'; 
-  document.getElementById('left').style = 'display: block;'; 
-  document.getElementById('right').style = 'display: block;'; 
+	var title = document.getElementById('title');
+	var panel = document.getElementById('panel');
+	var left  = document.getElementById('left');
+	var right = document.getElementById('right');
+	if (title) title.style.display = 'none';
+	if (panel) panel.style.display = 'inline-flex';
+	if (left)  left.style.display  = 'block';
+	if (right) right.style.display = 'block';
 }
+
 function searchdisplay() {
-  document.getElementById('searchpanel').style.display="block";
+	var sp = document.getElementById('searchpanel');
+	if (sp) sp.style.display = "block";
 }
 
 function display(n) {
-  var img1 = document.getElementById('img1');
-  var img2 = document.getElementById('img2');
-  var img3 = document.getElementById('img3');
-  var img4 = document.getElementById('img4');
-  var s1 = document.getElementById('s1');
-  var s2 = document.getElementById('s2');
-  var s3 = document.getElementById('s3');
-  var s4 = document.getElementById('s4');
-
-  img1.style = 'display: none;';
-  img2.style = 'display: none;';
-  img3.style = 'display: none;';
-  img4.style = 'display: none;';
-  s1.style = 'background: #DF2771; color: #FFF;';
-  s2.style = 'background: #DF2771; color: #FFF;';
-  s3.style = 'background: #DF2771; color: #FFF;';
-  s4.style = 'background: #DF2771; color: #FFF;';
-
-  if(n==1) {
-    img1.style = 'display: block;';
-    s1.style = 'background: #E5E8EF; color: #DF2771;';
-  }
-  if(n==2) {
-    img2.style = 'display: block;';
-    s2.style = 'background: #E5E8EF; color: #DF2771;';
-  }
-  if(n==3) {
-    img3.style = 'display: block;';
-    s3.style = 'background: #E5E8EF; color: #DF2771;';
-  }
-  if(n==4) {
-    img4.style = 'display: block;';
-    s4.style = 'background: #E5E8EF; color: #DF2771;';
-  } 
+	var ids = ['img1','img2','img3','img4'];
+	var sids = ['s1','s2','s3','s4'];
+	ids.forEach(function(id) {
+		var el = document.getElementById(id);
+		if (el) el.style.display = 'none';
+	});
+	sids.forEach(function(id) {
+		var el = document.getElementById(id);
+		if (el) { el.style.background = '#DF2771'; el.style.color = '#FFF'; }
+	});
+	var img = document.getElementById('img' + n);
+	var s   = document.getElementById('s'    + n);
+	if (img) img.style.display = 'block';
+	if (s)   { s.style.background = '#E5E8EF'; s.style.color = '#DF2771'; }
 }
 
+// ============================
+// Google Apps Script backends (server-side, included for completeness)
+// These functions run in Google Apps Script, not in the browser.
+// ============================
 
-function sideMenu(side) {
-  var menu = document.getElementById('side-menu');
-  if(side==0) {
-    menu.style = 'transform: translateX(0vh); position:fixed;';
-  }
-  else {
-    menu.style = 'transform: translateX(-100%);';
-  }
-  side++;
+/*
+function doPost_newsletter(e) {
+	var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+	var email = e.parameter.email;
+	sheet.appendRow([email]);
+	return ContentService
+		.createTextOutput(JSON.stringify({ result: "success" }))
+		.setMimeType(ContentService.MimeType.JSON);
 }
 
-
-function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  var email = e.parameter.email;
-  sheet.appendRow([email]);
-
-  return ContentService
-    .createTextOutput(JSON.stringify({ result: "success" }))
-    .setMimeType(ContentService.MimeType.JSON);
+function doPost_contact(e) {
+	var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+	var data = [
+		new Date(),
+		e.parameter.fname,
+		e.parameter.lname,
+		e.parameter.mail,
+		e.parameter.message,
+		e.parameter.additional
+	];
+	sheet.appendRow(data);
+	return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
 }
-
-
-function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  var data = [
-    new Date(),
-    e.parameter.fname,
-    e.parameter.lname,
-    e.parameter.mail,
-    e.parameter.message,
-    e.parameter.additional
-  ];
-  sheet.appendRow(data);
-
-  return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
-}
+*/

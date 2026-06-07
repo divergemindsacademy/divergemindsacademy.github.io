@@ -1,289 +1,431 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<link rel="shortcut icon" type="png" href="images/icon/main_justlogo.png">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DivergeMinds</title>
-	<meta name="desciption" content="">
+	<title>DivergeMinds Academy</title>
+	<meta name="description" content="Diverge Minds Academy - Nurturing Academic Excellence">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<style>
-        .logo-container {
-            position: absolute;
-            top: 20px; /* Default padding for larger screens */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            z-index: -1;
-            text-align: center;
-            padding: 0 10px; /* Default padding on the sides */
-        }
-
-        .logo-container img {
-            width: 60%;
-            height: auto;
-            opacity: 0.3;
-            max-width: 100%; /* Optional: restricts the maximum width of the image */
-            display: block;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 767px) {
-            .logo-container {
-				position: absolute;
-				top: 15%;
-				left: 50%;
-				transform: translateX(-50%);
-				width: 100%;
-				z-index: -1;
-				text-align: center;
-				padding: 0 10px; /* Default padding on the sides */
-			}
-
-			.logo-container img {
-				width: 100%;
-				height: auto;
-				opacity: 0.3;
-				max-width: 100%; /* Optional: restricts the maximum width of the image */
-				display: block;
-				margin: 0 auto;
-			}
-        }
-
-        /* Additional media queries for other screen sizes can be added here */
-    </style>
-	<script type="text/javascript" src="script.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-	<script>
-		$(window).on('scroll', function(){
-  			if($(window).scrollTop()){
-  			  $('nav').addClass('black');
- 			 }else {
- 		   $('nav').removeClass('black');
- 		 }
-		})
-	</script>
 </head>
 <body>
-<!-- Navigation Bar -->
-	<header id="header">
-		<nav>
-			<div class="logo"><img src="images/icon/main_justlogo.png" style="width: 45px; height: auto;" alt="logo"></div>
-			<ul>
-				<li><a class="active" href="">Home</a></li>
-				<li><a href="#courses_section">Courses</a></li>
-				<li><a href="#services_section">Services</a></li>
-				<li><a href="#team_section">Team</a></li>
-				<li><a href="#contactus_section">Contact</a></li>
-			</ul>
-			<div class="srch"><input type="text" class="search" placeholder="Search here..."><img src="images/development/search-icon.png" alt="search" onclick=slide()></div>
-			<a class="get-started" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank">Get Started</a>
-			<img src="images/icon/menu-button.png" class="menu" onclick="sideMenu(0)" alt="menu">
-		</nav>
-		<div class="logo-container">
-			<img src="images/icon/logo_only.png" alt="Logo">
-		</div>
-		<div class="head-container">
-			<div class="quote">
-				<p>Diverge Minds Academy</p>
-				<h5>Our mission is to nurture and develop this potential by creating a supportive and enriching environment that fosters personal growth and academic excellence. We are dedicated to empowering each student to reach their highest capabilities by offering tailored educational programs, innovative teaching methods, and a holistic approach to learning.
-					<br>
-					Our educators are not only experts in their fields but also passionate mentors who are committed to inspiring and guiding students on their unique journeys.
-				</h5>
-			</div>
-			<div class="svg-image">
-				<img src="images/development/boy1.png" alt="svg">
-			</div>
-		</div>
-		<div class="side-menu" id="side-menu">
-			<div class="close" onclick="sideMenu(1)"><img src="images/icon/close-button.png" alt=""></div>
-			<div class="user">
-				<img src="images/icon/main_justlogo.png" alt="DivergeMinds">
-				<p>Diverge Minds Academy</p>
-			</div>
-			<ul>
-				<li><a class="active" href="">Home</a></li>
-				<li><a href="#courses_section">Courses</a></li>
-				<li><a href="#team_section">Team</a></li>
-				<li><a href="#services_section">Services</a></li>
-				<li><a href="#contactus_section">Contact</a></li>
-			</ul>
-		</div>
-	</header>
 
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Navigation Bar -->
+<header id="header">
+	<nav id="navbar">
+		<div class="logo slide-down-init" style="animation-delay:0.1s">
+			<img src="images/icon/main_justlogo.png" style="width: 45px; height: auto;" alt="logo">
+		</div>
+		<ul class="nav-links slide-down-init" style="animation-delay:0.2s">
+			<li><a class="active" href="">Home</a></li>
+			<li><a href="#courses_section">Courses</a></li>
+			<li><a href="#services_section">Services</a></li>
+			<li><a href="#team_section">Team</a></li>
+			<li><a href="#contactus_section">Contact</a></li>
+		</ul>
+		<div class="srch slide-down-init" style="animation-delay:0.3s">
+			<input type="text" class="search" placeholder="Search here...">
+			<img src="images/development/search-icon.png" alt="search" onclick="slide()">
+		</div>
+		<a class="get-started slide-down-init" style="animation-delay:0.4s" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank">Get Started</a>
+		<img src="images/icon/menu-button.png" class="menu" onclick="sideMenu(0)" alt="menu">
+	</nav>
+
+	<!-- Watermark Logo -->
+	<div class="logo-container reveal-fade" style="animation-delay:0.5s">
+		<img src="images/icon/logo_only.png" alt="Logo">
+	</div>
+
+	<!-- Hero Content -->
+	<div class="head-container">
+		<div class="quote hero-text-animate">
+			<p>Diverge Minds Academy</p>
+			<h5>Our mission is to nurture and develop this potential by creating a supportive and enriching environment that fosters personal growth and academic excellence. We are dedicated to empowering each student to reach their highest capabilities by offering tailored educational programs, innovative teaching methods, and a holistic approach to learning.
+				<br><br>
+				Our educators are not only experts in their fields but also passionate mentors who are committed to inspiring and guiding students on their unique journeys.
+			</h5>
+			<div class="hero-cta-row">
+				<a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank">Enroll Now</a>
+				<a class="cta-secondary" href="#courses_section">View Courses</a>
+			</div>
+		</div>
+		<div class="svg-image hero-img-animate">
+			<img src="images/development/boy1.png" alt="svg">
+		</div>
+	</div>
+
+	<!-- Floating particles background -->
+	<div class="particles" id="particles"></div>
+
+	<!-- Side Menu -->
+	<div class="side-menu" id="side-menu">
+		<div class="close" onclick="sideMenu(1)"><img src="images/icon/close-button.png" alt=""></div>
+		<div class="user">
+			<img src="images/icon/main_justlogo.png" alt="DivergeMinds">
+			<p>Diverge Minds Academy</p>
+		</div>
+		<ul>
+			<li><a class="active" href="">Home</a></li>
+			<li><a href="#courses_section">Courses</a></li>
+			<li><a href="#team_section">Team</a></li>
+			<li><a href="#services_section">Services</a></li>
+			<li><a href="#contactus_section">Contact</a></li>
+		</ul>
+	</div>
+</header>
+
+<!-- Stats Strip -->
+<div class="stats-strip">
+	<div class="stat-item scroll-reveal" data-delay="150">
+		<span class="stat-num" data-target="5">0</span><span>+</span>
+		<p>Courses We Offer</p>
+	</div>
+	<div class="stat-item scroll-reveal" data-delay="0">
+		<span></span><span>24/7</span>
+		<p>Doubt Support</p>
+	</div>
+	<div class="stat-item scroll-reveal" data-delay="300">
+		<span class="stat-num" data-target="100">0</span><span>%</span>
+		<p>Student Satisfaction</p>
+	</div>
+	<div class="stat-item scroll-reveal" data-delay="450">
+		<span></span><span>Guranteed</span>
+		<p>Success</p>
+	</div>
+</div>
 
 <!-- Courses -->
-	<div class="title">
-		<span>Courses/Facilities We Provide</span>
+<section class="section-wrapper" id="courses_section">
+	<div class="section-header scroll-reveal-up">
+		<span class="section-tag">What We Teach</span>
+		<h2>Courses & Facilities We Provide</h2>
+		<div class="underline-bar"></div>
 	</div>
-	<br><br>
 	<div class="course">
-		<center><div class="course_box" id="courses_section">
-		<div class="det"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"> ISI Entrance</a></div>
-		<div class="det"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"> CMI Entrance</a></div>
-		<div class="det"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"> Sample Papers</a></div>
-		</div></center>
 		<div class="course_box">
-		<div class="det"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"> Math Olympiads</a></div>
-		<div class="det"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"> JEE Preparation</a></div>
-		<div class="det"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"> Quizzes</a></div>
+			<div class="det scroll-reveal-card" data-delay="300"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"><span class="course-icon">🏆</span> Math Olympiads</a></div>
+			<div class="det scroll-reveal-card" data-delay="0"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"><span class="course-icon">📐</span> ISI Entrance</a></div>
+			<div class="det scroll-reveal-card" data-delay="100"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"><span class="course-icon">📊</span> CMI Entrance</a></div>
+			<div class="det scroll-reveal-card" data-delay="400"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"><span class="course-icon">⚗️</span> JEE Preparation</a></div>
+			<div class="det scroll-reveal-card" data-delay="200"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"><span class="course-icon">📄</span> Sample Papers</a></div>
+			<div class="det scroll-reveal-card" data-delay="500"><a href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank"><span class="course-icon">🧩</span> Quizzes</a></div>
 		</div>
 	</div>
-
-
+</section>
 
 <!-- SERVICES -->
-	<div class="service-swipe">
-		<div class="diffSection" id="services_section">
-		<center><p style="font-size: 50px; padding: 100px; padding-bottom: 40px; color: #fff;">Services</p></center>
+<div class="service-swipe">
+	<div class="diffSection" id="services_section">
+		<div class="section-header-light scroll-reveal-up">
+			<span class="section-tag-light">What We Offer</span>
+			<p class="section-title-light">Services</p>
+			<div class="underline-bar-light"></div>
 		</div>
-		<a href="get-back-soon.html"><div class="s-card"><img src="images/icon/free_online_trial_courses.png"><p>Free Online Trial Courses</p></div></a>
-		<a href="get-back-soon.html"><div class="s-card"><img src="images/icon/competitive_exams.png"><p>Building Concepts for Competitive Exams</p></div></a>
-		<a href="https://www.youtube.com/@DivergeMindsAcademy"><div class="s-card"><img src="images/icon/online_video_lectures.png"><p>Online Video Lectures</p></div></a>
-		<a href="get-back-soon.html"><div class="s-card"><img src="images/icon/weekly_problem_sets.png"><p>Weekly Problem Sets</p></div></a>
-		<a href="get-back-soon.html"><div class="s-card"><img src="images/icon/daily_brain_teasers.png"><p>Daily Brain Teasers</p></div></a>
-		<a href="get-back-soon.html"><div class="s-card"><img src="images/icon/discussion_with_tutors.png"><p>Discussion with Our Tutors</p></div></a>
-		<a href="get-back-soon.html"><div class="s-card"><img src="images/icon/open_discussion_forum.png"><p>Open Discussion Forum</p></div></a>
-		<a href="get-back-soon.html"><div class="s-card"><img src="images/icon/course_materials.png"><p>Course Materials</p></div></a>
 	</div>
+	<div class="services-grid">
+		<a href="get-back-soon.html" class="s-card-wrap scroll-reveal-card" data-delay="0">
+			<div class="s-card">
+				<div class="s-card-icon"><img src="images/icon/free_online_trial_courses.png"></div>
+				<p>Free Online Trial Courses</p>
+				<span class="s-card-arrow">→</span>
+			</div>
+		</a>
+		<a href="get-back-soon.html" class="s-card-wrap scroll-reveal-card" data-delay="80">
+			<div class="s-card">
+				<div class="s-card-icon"><img src="images/icon/competitive_exams.png"></div>
+				<p>Building Concepts for Competitive Exams</p>
+				<span class="s-card-arrow">→</span>
+			</div>
+		</a>
+		<a href="https://www.youtube.com/@DivergeMindsAcademy" class="s-card-wrap scroll-reveal-card" data-delay="160">
+			<div class="s-card">
+				<div class="s-card-icon"><img src="images/icon/online_video_lectures.png"></div>
+				<p>Online Video Lectures</p>
+				<span class="s-card-arrow">→</span>
+			</div>
+		</a>
+		<a href="get-back-soon.html" class="s-card-wrap scroll-reveal-card" data-delay="240">
+			<div class="s-card">
+				<div class="s-card-icon"><img src="images/icon/weekly_problem_sets.png"></div>
+				<p>Weekly Problem Sets</p>
+				<span class="s-card-arrow">→</span>
+			</div>
+		</a>
+		<a href="get-back-soon.html" class="s-card-wrap scroll-reveal-card" data-delay="320">
+			<div class="s-card">
+				<div class="s-card-icon"><img src="images/icon/daily_brain_teasers.png"></div>
+				<p>Daily Brain Teasers</p>
+				<span class="s-card-arrow">→</span>
+			</div>
+		</a>
+		<a href="get-back-soon.html" class="s-card-wrap scroll-reveal-card" data-delay="400">
+			<div class="s-card">
+				<div class="s-card-icon"><img src="images/icon/discussion_with_tutors.png"></div>
+				<p>Discussion with Our Tutors</p>
+				<span class="s-card-arrow">→</span>
+			</div>
+		</a>
+		<a href="get-back-soon.html" class="s-card-wrap scroll-reveal-card" data-delay="480">
+			<div class="s-card">
+				<div class="s-card-icon"><img src="images/icon/open_discussion_forum.png"></div>
+				<p>Open Discussion Forum</p>
+				<span class="s-card-arrow">→</span>
+			</div>
+		</a>
+		<a href="get-back-soon.html" class="s-card-wrap scroll-reveal-card" data-delay="560">
+			<div class="s-card">
+				<div class="s-card-icon"><img src="images/icon/course_materials.png"></div>
+				<p>Course Materials</p>
+				<span class="s-card-arrow">→</span>
+			</div>
+		</a>
+	</div>
+</div>
 
 <!-- Founders -->
-<div class="diffSection" id="team_section">
-	<center><p style="font-size: 50px; padding-top: 100px; padding-bottom: 60px;">Founders</p></center>
+<div class="diffSection founders-section" id="team_section">
+	<div class="section-header scroll-reveal-up">
+		<span class="section-tag">Meet the Team</span>
+		<h2>Mentors</h2>
+		<div class="underline-bar"></div>
+	</div>
 	<div class="totalcard">
-		<div class="card">
+		<div class="card scroll-reveal-left" data-delay="0">
 			<center><img src="images/people/ankan.jpg"></center>
-			<center><div class="card-title">Ankan Kar</div>
-			<div id="detail">
-				<!-- <p></p> -->
-				<div class="duty"></div>
-				<a href="https://ankankar-zargon.github.io/" target="_blank"><button class="btn-ankan">Website</button></a>
-			</div>
+			<center>
+				<div class="card-title">Ankan Kar</div>
+				<div id="detail">
+					<div class="duty"></div>
+					<p class="content">Co-Founder<br>ISI and CMI Alumni.</p>
+					<a href="https://ankankar-zargon.github.io/" target="_blank"><button class="btn-ankan">Website</button></a>
+				</div>
 			</center>
 		</div>
-		<div class="card">
+		<div class="card scroll-reveal-right" data-delay="0">
 			<center><img src="images/people/nirjhar.jpg"></center>
-			<center><div class="card-title">Nirjhar Nath</div>
-			<div id="detail">
-				<!-- <p></p> -->
-				<div class="duty"></div>
-				<a href="https://combinoob.github.io/" target="_blank"><button class="btn-nirjhar">Website</button></a>
-			</div>
+			<center>
+				<div class="card-title">Nirjhar Nath</div>
+				<div id="detail">
+					<div class="duty"></div>
+					<p class="content">Co-Founder<br>CMI Alumni.</p>
+					<a href="https://combinoob.github.io/" target="_blank"><button class="btn-nirjhar">Website</button></a>
+				</div>
+			</center>
+		</div>
+		<div class="card scroll-reveal-right" data-delay="0">
+			<center><img src="images/people/soumabha.jpeg"></center>
+			<center>
+				<div class="card-title">Soumabha</div>
+				<div id="detail">
+					<div class="duty"></div>
+					<p class="content">Co-Founder<br>CMI Alumni.</p>
+					<a href="https://www.linkedin.com/in/soumabha-roy-96336528b" target="_blank"><button class="btn-soumabha">Website</button></a>
+				</div>
 			</center>
 		</div>
 	</div>
 </div>
 
-
 <!-- CONTACT US -->
-	<div class="diffSection" id="contactus_section">
-		<center><p style="font-size: 50px; padding: 100px">Contact Us</p></center>
-		<div class="csec"></div>
-		<div class="back-contact">
-			<div class="cc">
-			<form id="contact-form">
-  				<div style="display: flex; justify-content: center; gap: 10px;">
-    				<div>
-      				<label>First Name <span class="imp">*</span></label><br>
-      				<input type="text" name="fname" style="width: 175px" required>
-    				</div>
-    				<div>
-      				<label>Last Name <span class="imp">*</span></label><br>
-      				<input type="text" name="lname" style="width: 175px" required>
-    				</div>
-  				</div>
-  				<br>
-  				<label>Email <span class="imp">*</span></label><br>
-  				<input type="email" name="mail" style="width: 100%" required><br>
-  				<label>Message <span class="imp">*</span></label><br>
-  				<input type="text" name="message" style="width: 100%" required><br>
-  				<label>Additional Details</label><br>
-  				<textarea name="additional" style="width: 100%"></textarea><br>
-  				<button type="submit" id="csubmit">Send Message</button>
-			</form>
+<div class="diffSection contact-section" id="contactus_section">
+	<div class="section-header scroll-reveal-up">
+		<span class="section-tag">Reach Out</span>
+		<h2>Contact Us</h2>
+		<div class="underline-bar"></div>
+	</div>
+	<div class="csec"></div>
+	<div class="back-contact">
+		<div class="contact-info scroll-reveal-left" data-delay="0">
+			<h3>Let's Connect</h3>
+			<p>Have questions about our courses? Reach out and our team will get back to you shortly.</p>
+			<div class="contact-detail">
+				<img src="images/icon/phone.png" width="22" height="22">
+				<span>+91-998-615-7387</span>
 			</div>
+			<div class="contact-detail">
+				<img src="images/icon/mail.png" width="22" height="22">
+				<span>divergemindsacademy@gmail.com</span>
+			</div>
+		</div>
+		<div class="cc scroll-reveal-right" data-delay="100">
+			<form id="contact-form">
+				<div class="form-row">
+					<div class="form-group">
+						<label>First Name <span class="imp">*</span></label>
+						<input type="text" name="fname" required>
+					</div>
+					<div class="form-group">
+						<label>Last Name <span class="imp">*</span></label>
+						<input type="text" name="lname" required>
+					</div>
+				</div>
+				<div class="form-group-full">
+					<label>Email <span class="imp">*</span></label>
+					<input type="email" name="mail" required>
+				</div>
+				<div class="form-group-full">
+					<label>Message <span class="imp">*</span></label>
+					<input type="text" name="message" required>
+				</div>
+				<div class="form-group-full">
+					<label>Additional Details</label>
+					<textarea name="additional"></textarea>
+				</div>
+				<button type="submit" id="csubmit">Send Message <span class="btn-arrow">→</span></button>
+			</form>
 		</div>
 	</div>
+</div>
 
 <!-- FOOTER -->
-	<footer>
-		<div class="footer-container">
-			<div class="left-col">
-				<img src="images/icon/main_justlogo.png" style="width: 200px;">
-				<div class="logo"></div>
-				<div class="social-media">
-					<a href="https://www.facebook.com/share/154oaBmdSX/"><img src="images/icon\fb.png"></a>
-					<a href="https://www.instagram.com/diverge_minds_academy/"><img src="images/icon\insta.png"></a>
-					<a href="#"><img src="images/icon\tt.png"></a>
-					<a href="https://www.youtube.com/@DivergeMindsAcademy"><img src="images/icon\ytube.png"></a>
-					<a href="https://www.linkedin.com/company/diverge-minds-academy/"><img src="images/icon\linkedin.png"></a>
-				</div><br><br>
-				<p class="rights-text">Copyright © 2024, Diverge Minds Academy</p>
-				<!-- <br><p><img src="images/icon/location.png"> Chennai Mathematical Institute<br>SIPCOT IT Park, Siruseri - 603103</p><br> -->
-				<p><img src="images/icon/phone.png" width="22" height="22"> +91-xxxx-xxx-xxx<br><img src="images/icon/mail.png" width="22" height="22">&nbsp; divergemindsacademy@gmail.com</p>
+<footer>
+	<div class="footer-container">
+		<div class="left-col">
+			<img src="images/icon/main_justlogo.png" style="width: 200px;" alt="Diverge Minds Logo">
+			<div class="social-media">
+				<a href="https://www.facebook.com/share/154oaBmdSX/" class="social-link"><img src="images/icon/fb.png"></a>
+				<a href="https://www.instagram.com/diverge_minds_academy/" class="social-link"><img src="images/icon/insta.png"></a>
+				<a href="#" class="social-link"><img src="images/icon/tt.png"></a>
+				<a href="https://www.youtube.com/@DivergeMindsAcademy" class="social-link"><img src="images/icon/ytube.png"></a>
+				<a href="https://www.linkedin.com/company/diverge-minds-academy/" class="social-link"><img src="images/icon/linkedin.png"></a>
 			</div>
-			<div class="right-col">
-				<h1 style="color: #fff">Our Newsletter</h1>
-				<div class="border"></div><br>
-				<p>Enter Your Email to get our News and updates.</p>
-				<form class="newsletter-form">
-					<input class="txtb" type="email" placeholder="Enter Your Email">
-					<input class="btn" type="submit" value="Submit">
-				</form>
-			</div>
+			<br><br>
+			<p class="rights-text">Copyright © 2024, Diverge Minds Academy</p>
+			<p>
+				<img src="images/icon/phone.png" width="22" height="22"> +91-998-615-7387<br>
+				<img src="images/icon/mail.png" width="22" height="22">&nbsp; divergemindsacademy@gmail.com
+			</p>
 		</div>
-	</footer>
+		<div class="right-col">
+			<h1 style="color: #fff">Our Newsletter</h1>
+			<div class="border"></div><br>
+			<p>Enter Your Email to get our News and updates.</p>
+			<form class="newsletter-form">
+				<input class="txtb" type="email" placeholder="Enter Your Email">
+				<input class="btn" type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+</footer>
 
+<script src="script.js"></script>
 <script>
-  document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+/* ---- Scroll Progress ---- */
+window.addEventListener('scroll', () => {
+	const scrollTop = window.scrollY;
+	const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+	const pct = (scrollTop / docHeight) * 100;
+	document.getElementById('scrollProgress').style.width = pct + '%';
+});
 
-    const email = document.querySelector('.txtb').value;
-    
-    fetch('https://script.google.com/macros/s/AKfycbyeFHZmF9ziFzSkIuLvkIeL-SHc8MXsXezGRgH1OKVJbI7EMfkP5mtZhHPOeHbPnWbqQQ/exec', {
-      method: 'POST',
-      body: new URLSearchParams(`email=${email}`),
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    })
-    .then(res => res.text())
-    .then(data => {
-      alert("Thank you! Your email has been submitted.");
-      document.querySelector('.txtb').value = ""; // clear input
-    })
-    .catch(err => {
-      console.error("Error:", err);
-      alert("Oops! Something went wrong.");
-    });
-  });
+/* ---- Navbar scroll effect ---- */
+$(window).on('scroll', function(){
+	if($(window).scrollTop()){
+		$('nav').addClass('black');
+	} else {
+		$('nav').removeClass('black');
+	}
+});
+
+/* ---- Scroll Reveal ---- */
+function revealOnScroll() {
+	const triggers = document.querySelectorAll(
+		'.scroll-reveal, .scroll-reveal-up, .scroll-reveal-card, .scroll-reveal-left, .scroll-reveal-right'
+	);
+	triggers.forEach(el => {
+		const rect = el.getBoundingClientRect();
+		const delay = parseInt(el.dataset.delay || 0);
+		if (rect.top < window.innerHeight * 0.88) {
+			setTimeout(() => el.classList.add('revealed'), delay);
+		}
+	});
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+/* ---- Counter animation ---- */
+function animateCounter(el) {
+	const target = parseInt(el.dataset.target);
+	let current = 0;
+	const step = Math.max(1, Math.floor(target / 60));
+	const timer = setInterval(() => {
+		current += step;
+		if (current >= target) { current = target; clearInterval(timer); }
+		el.textContent = current;
+	}, 25);
+}
+const statObserver = new IntersectionObserver((entries) => {
+	entries.forEach(e => {
+		if (e.isIntersecting) {
+			e.target.querySelectorAll('.stat-num').forEach(animateCounter);
+			statObserver.unobserve(e.target);
+		}
+	});
+}, { threshold: 0.4 });
+document.querySelectorAll('.stats-strip').forEach(el => statObserver.observe(el));
+
+/* ---- Floating particles ---- */
+const container = document.getElementById('particles');
+for (let i = 0; i < 18; i++) {
+	const p = document.createElement('span');
+	p.className = 'particle';
+	p.style.cssText = `
+		left:${Math.random()*100}%;
+		top:${Math.random()*100}%;
+		width:${4 + Math.random()*8}px;
+		height:${4 + Math.random()*8}px;
+		animation-delay:${Math.random()*6}s;
+		animation-duration:${5 + Math.random()*8}s;
+		opacity:${0.15 + Math.random()*0.3};
+	`;
+	container.appendChild(p);
+}
+
+/* ---- Newsletter ---- */
+document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+	e.preventDefault();
+	const email = document.querySelector('.txtb').value;
+	fetch('https://script.google.com/macros/s/AKfycbyeFHZmF9ziFzSkIuLvkIeL-SHc8MXsXezGRgH1OKVJbI7EMfkP5mtZhHPOeHbPnWbqQQ/exec', {
+		method: 'POST',
+		body: new URLSearchParams(`email=${email}`),
+		headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+	})
+	.then(res => res.text())
+	.then(() => {
+		alert("Thank you! Your email has been submitted.");
+		document.querySelector('.txtb').value = "";
+	})
+	.catch(err => { console.error(err); alert("Oops! Something went wrong."); });
+});
+
+/* ---- Contact Form ---- */
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+	e.preventDefault();
+	const formData = new FormData(this);
+	const btn = document.getElementById('csubmit');
+	btn.textContent = 'Sending...';
+	fetch("https://script.google.com/macros/s/AKfycbyTk8Px4w_4TZddMPzdoEITvdIVr-wE22gDFzoH84YhLav2u0Lxn2D3oD3OkiNaytcW7g/exec", {
+		method: "POST",
+		body: new URLSearchParams(formData),
+		headers: { "Content-Type": "application/x-www-form-urlencoded" }
+	})
+	.then(res => res.text())
+	.then(() => {
+		alert("Thank you! Your message has been sent.");
+		document.getElementById("contact-form").reset();
+		btn.innerHTML = 'Send Message <span class="btn-arrow">→</span>';
+	})
+	.catch(err => {
+		console.error(err);
+		alert("Oops! Something went wrong.");
+		btn.innerHTML = 'Send Message <span class="btn-arrow">→</span>';
+	});
+});
 </script>
-
-<script>
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const formData = new FormData(this);
-
-    fetch("https://script.google.com/macros/s/AKfycbyTk8Px4w_4TZddMPzdoEITvdIVr-wE22gDFzoH84YhLav2u0Lxn2D3oD3OkiNaytcW7g/exec", {
-      method: "POST",
-      body: new URLSearchParams(formData),
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      }
-    })
-    .then(res => res.text())
-    .then(data => {
-      alert("Thank you! Your message has been sent.");
-      document.getElementById("contact-form").reset();
-    })
-    .catch(err => {
-      console.error("Error:", err);
-      alert("Oops! Something went wrong.");
-    });
-  });
-</script>
-
 </body>
 </html>
