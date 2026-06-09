@@ -29,6 +29,15 @@ function sideMenu(side) {
 	}
 }
 
+// Close side menu when any nav link inside it is clicked
+document.querySelectorAll('.side-menu ul li a').forEach(function(link) {
+	link.addEventListener('click', function() {
+		var menu = document.getElementById('side-menu');
+		if (menu) menu.classList.remove('open');
+		document.body.classList.remove('no-scroll');
+	});
+});
+
 // ============================
 // Navigation switch (mobile legacy)
 // ============================
