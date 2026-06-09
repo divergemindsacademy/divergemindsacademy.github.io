@@ -811,7 +811,7 @@ header::before {
 }
 
 .totalcard .card:hover .card-bio {
-	max-height: 160px;
+	max-height: 450px;
 	opacity: 1;
 	padding: 8px 20px 4px;
 }
