@@ -8,7 +8,6 @@
 	<meta name="description" content="Diverge Minds Academy - Nurturing Academic Excellence">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 </head>
 <body>
 
@@ -103,7 +102,7 @@
 <section class="section-wrapper" id="courses_section">
 	<div class="section-header scroll-reveal-up">
 		<span class="section-tag">What We Teach</span>
-		<h2>Courses & Facilities We Provide</h2>
+		<h2>Courses &amp; Facilities We Provide</h2>
 		<div class="underline-bar"></div>
 	</div>
 	<div class="course">
@@ -295,7 +294,7 @@
 				<a href="https://www.linkedin.com/company/diverge-minds-academy/" class="social-link"><img src="images/icon/linkedin.png"></a>
 			</div>
 			<br><br>
-			<p class="rights-text">Copyright © 2024, Diverge Minds Academy</p>
+			<p class="rights-text">Copyright &copy; 2024, Diverge Minds Academy</p>
 			<p>
 				<img src="images/icon/phone.png" width="22" height="22"> +91-998-615-7387<br>
 				<img src="images/icon/mail.png" width="22" height="22">&nbsp; divergemindsacademy@gmail.com
@@ -313,127 +312,7 @@
 	</div>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="script.js"></script>
-<script>
-/* ---- Scroll Progress ---- */
-window.addEventListener('scroll', () => {
-	const scrollTop = window.scrollY;
-	const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-	const pct = (scrollTop / docHeight) * 100;
-	document.getElementById('scrollProgress').style.width = pct + '%';
-});
-
-/* ---- Navbar scroll effect ---- */
-$(window).on('scroll', function(){
-	if($(window).scrollTop()){
-		$('nav').addClass('black');
-	} else {
-		$('nav').removeClass('black');
-	}
-});
-
-/* ---- Scroll Reveal ---- */
-function revealOnScroll() {
-	const triggers = document.querySelectorAll(
-		'.scroll-reveal, .scroll-reveal-up, .scroll-reveal-card, .scroll-reveal-left, .scroll-reveal-right'
-	);
-	triggers.forEach(el => {
-		const rect = el.getBoundingClientRect();
-		const delay = parseInt(el.dataset.delay || 0);
-		if (rect.top < window.innerHeight * 0.88) {
-			setTimeout(() => el.classList.add('revealed'), delay);
-		}
-	});
-}
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-
-/* ---- Counter animation ---- */
-function animateCounter(el) {
-	const target = parseInt(el.dataset.target);
-	let current = 0;
-	const step = Math.max(1, Math.floor(target / 60));
-	const timer = setInterval(() => {
-		current += step;
-		if (current >= target) { current = target; clearInterval(timer); }
-		el.textContent = current;
-	}, 25);
-}
-const statObserver = new IntersectionObserver((entries) => {
-	entries.forEach(e => {
-		if (e.isIntersecting) {
-			e.target.querySelectorAll('.stat-num').forEach(animateCounter);
-			statObserver.unobserve(e.target);
-		}
-	});
-}, { threshold: 0.4 });
-document.querySelectorAll('.stats-strip').forEach(el => statObserver.observe(el));
-
-/* ---- Floating particles ---- */
-const container = document.getElementById('particles');
-for (let i = 0; i < 50; i++) {
-	const p = document.createElement('span');
-	p.className = 'particle';
-	p.style.cssText = `
-		left:${Math.random()*100}%;
-		top:${Math.random()*100}%;
-		width:${4 + Math.random()*8}px;
-		height:${4 + Math.random()*8}px;
-		animation-delay:${Math.random()*6}s;
-		animation-duration:${5 + Math.random()*8}s;
-		opacity:${0.15 + Math.random()*0.3};
-	`;
-	container.appendChild(p);
-}
-
-/* ---- Newsletter ---- */
-document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-	e.preventDefault();
-	const email = document.querySelector('.txtb').value;
-	fetch('https://script.google.com/macros/s/AKfycbyeFHZmF9ziFzSkIuLvkIeL-SHc8MXsXezGRgH1OKVJbI7EMfkP5mtZhHPOeHbPnWbqQQ/exec', {
-		method: 'POST',
-		body: new URLSearchParams({ email: email }),
-		headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-	})
-	.then(res => res.text())
-	.then(() => {
-		alert("Thank you! Your email has been submitted.");
-		document.querySelector('.txtb').value = "";
-	})
-	.catch(err => { console.error(err); alert("Oops! Something went wrong."); });
-});
-
-/* ---- Contact Form ---- */
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-	e.preventDefault();
-	const form = this;
-	const btn = document.getElementById('csubmit');
-	btn.textContent = 'Sending...';
-
-	const params = new URLSearchParams();
-	params.append("fname",       form.fname.value);
-	params.append("lname",       form.lname.value);
-	params.append("mail",        form.mail.value);
-	params.append("message",     form.message.value);
-	params.append("additional",  form.additional.value);
-
-	fetch("https://script.google.com/macros/s/AKfycbyTk8Px4w_4TZddMPzdoEITvdIVr-wE22gDFzoH84YhLav2u0Lxn2D3oD3OkiNaytcW7g/exec", {
-		method: "POST",
-		body: params,
-		headers: { "Content-Type": "application/x-www-form-urlencoded" }
-	})
-	.then(res => res.text())
-	.then(() => {
-		alert("Thank you! Your message has been sent.");
-		form.reset();
-		btn.innerHTML = 'Send Message <span class="btn-arrow">→</span>';
-	})
-	.catch(err => {
-		console.error(err);
-		alert("Oops! Something went wrong.");
-		btn.innerHTML = 'Send Message <span class="btn-arrow">→</span>';
-	});
-});
-</script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 // ============================
-// Scroll Appear (original, kept)
+// Scroll Appear
 // ============================
 function scrollAppear() {
 	var elements = document.querySelectorAll('.side-text, .sideImage');
@@ -20,7 +20,6 @@ window.addEventListener('scroll', scrollAppear);
 function sideMenu(side) {
 	var menu = document.getElementById('side-menu');
 	if (!menu) return;
-
 	if (side == 0) {
 		menu.classList.add('open');
 		document.body.classList.add('no-scroll');
@@ -50,7 +49,7 @@ function switchTAB() {
 }
 
 // ============================
-// Search slide (original kept)
+// Search slide
 // ============================
 function slide() {
 	var srch = document.querySelector('.search');
@@ -61,7 +60,7 @@ function slide() {
 }
 
 // ============================
-// Login / Register (original kept)
+// Login / Register
 // ============================
 function register() {
 	var x = document.getElementById("login");
@@ -94,7 +93,7 @@ function login() {
 }
 
 // ============================
-// Checkbox (original kept)
+// Checkbox
 // ============================
 function goFurther() {
 	var chk = document.getElementById("chkAgree");
@@ -108,14 +107,14 @@ function goFurther() {
 }
 
 // ============================
-// Google auth (original kept)
+// Google auth
 // ============================
 function google() {
 	window.location.assign("https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue&csig=AF-SEnbZHbi77CbAiuHE%3A1585466693&flowName=GlifWebSignIn&flowEntry=AddSession");
 }
 
 // ============================
-// Quiz page functions (original kept)
+// Quiz page functions
 // ============================
 function quizt(frame) {
 	var frames = ['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11'];
@@ -162,66 +161,146 @@ function display(n) {
 }
 
 // ============================
-// Google Apps Script backends (server-side, included for completeness)
-// These functions run in Google Apps Script, not in the browser.
+// Scroll Progress
 // ============================
-
-/*
-function doPost_newsletter(e) {
-	var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-	var email = e.parameter.email;
-	sheet.appendRow([email]);
-	return ContentService
-		.createTextOutput(JSON.stringify({ result: "success" }))
-		.setMimeType(ContentService.MimeType.JSON);
-}
-
-function doPost_contact(e) {
-	var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-	var data = [
-		new Date(),
-		e.parameter.fname,
-		e.parameter.lname,
-		e.parameter.mail,
-		e.parameter.message,
-		e.parameter.additional
-	];
-	sheet.appendRow(data);
-	return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
-}
-*/
-
-fetch("https://script.google.com/macros/s/AKfycbyTk8Px4w_4TZddMPzdoEITvdIVr-wE22gDFzoH84YhLav2u0Lxn2D3oD3OkiNaytcW7g/exec", {
-    method: "POST",
-    body: params,
-    headers: { "Content-Type": "application/x-www-form-urlencoded" }
-})
-.then(res => res.text())
-.then(() => {
-    alert("Thank you! Your message has been sent.");
-    form.reset();
-    btn.innerHTML = 'Send Message <span class="btn-arrow">→</span>';
-})
-.catch(err => {
-    console.error(err);
-    alert("Oops! Something went wrong.");
-    btn.innerHTML = 'Send Message <span class="btn-arrow">→</span>';
+window.addEventListener('scroll', function() {
+	var scrollTop = window.scrollY;
+	var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+	var pct = (scrollTop / docHeight) * 100;
+	var bar = document.getElementById('scrollProgress');
+	if (bar) bar.style.width = pct + '%';
 });
 
+// ============================
+// Navbar scroll effect
+// ============================
+$(window).on('scroll', function(){
+	if ($(window).scrollTop()) {
+		$('nav').addClass('black');
+	} else {
+		$('nav').removeClass('black');
+	}
+});
 
-function doPost(e) {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    var data = [
-        new Date(),
-        e.parameter.fname,
-        e.parameter.lname,
-        e.parameter.mail,
-        e.parameter.message,
-        e.parameter.additional
-    ];
-    sheet.appendRow(data);
+// ============================
+// Scroll Reveal
+// ============================
+function revealOnScroll() {
+	var triggers = document.querySelectorAll(
+		'.scroll-reveal, .scroll-reveal-up, .scroll-reveal-card, .scroll-reveal-left, .scroll-reveal-right'
+	);
+	triggers.forEach(function(el) {
+		var rect = el.getBoundingClientRect();
+		var delay = parseInt(el.dataset.delay || 0);
+		if (rect.top < window.innerHeight * 0.88) {
+			setTimeout(function() { el.classList.add('revealed'); }, delay);
+		}
+	});
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 
-    return ContentService
-        .createTextOutput(JSON.stringify({ result: "success" }))
-        .setMimeType(ContentService.MimeType.JSON);
+// ============================
+// Counter animation
+// ============================
+function animateCounter(el) {
+	var target = parseInt(el.dataset.target);
+	var current = 0;
+	var step = Math.max(1, Math.floor(target / 60));
+	var timer = setInterval(function() {
+		current += step;
+		if (current >= target) { current = target; clearInterval(timer); }
+		el.textContent = current;
+	}, 25);
+}
+var statObserver = new IntersectionObserver(function(entries) {
+	entries.forEach(function(e) {
+		if (e.isIntersecting) {
+			e.target.querySelectorAll('.stat-num').forEach(animateCounter);
+			statObserver.unobserve(e.target);
+		}
+	});
+}, { threshold: 0.4 });
+document.querySelectorAll('.stats-strip').forEach(function(el) {
+	statObserver.observe(el);
+});
+
+// ============================
+// Floating particles
+// ============================
+var container = document.getElementById('particles');
+if (container) {
+	for (var pi = 0; pi < 50; pi++) {
+		var p = document.createElement('span');
+		p.className = 'particle';
+		p.style.cssText =
+			'left:' + (Math.random()*100) + '%;' +
+			'top:' + (Math.random()*100) + '%;' +
+			'width:' + (4 + Math.random()*8) + 'px;' +
+			'height:' + (4 + Math.random()*8) + 'px;' +
+			'animation-delay:' + (Math.random()*6) + 's;' +
+			'animation-duration:' + (5 + Math.random()*8) + 's;' +
+			'opacity:' + (0.15 + Math.random()*0.3) + ';';
+		container.appendChild(p);
+	}
+}
+
+// ============================
+// Newsletter
+// ============================
+var newsletterForm = document.querySelector('.newsletter-form');
+if (newsletterForm) {
+	newsletterForm.addEventListener('submit', function(e) {
+		e.preventDefault();
+		var email = document.querySelector('.txtb').value;
+		fetch('https://script.google.com/macros/s/AKfycbyeFHZmF9ziFzSkIuLvkIeL-SHc8MXsXezGRgH1OKVJbI7EMfkP5mtZhHPOeHbPnWbqQQ/exec', {
+			method: 'POST',
+			body: new URLSearchParams({ email: email }),
+			mode: 'no-cors'
+		})
+		.then(function() {
+			alert("Thank you! Your email has been submitted.");
+			document.querySelector('.txtb').value = "";
+		})
+		.catch(function(err) {
+			console.error(err);
+			alert("Oops! Something went wrong.");
+		});
+	});
+}
+
+// ============================
+// Contact Form
+// ============================
+var contactForm = document.getElementById("contact-form");
+if (contactForm) {
+	contactForm.addEventListener("submit", function(e) {
+		e.preventDefault();
+		var form = this;
+		var btn = document.getElementById('csubmit');
+		btn.textContent = 'Sending...';
+
+		var params = new URLSearchParams();
+		params.append("fname",      form.fname.value);
+		params.append("lname",      form.lname.value);
+		params.append("mail",       form.mail.value);
+		params.append("message",    form.message.value);
+		params.append("additional", form.additional.value);
+
+		fetch("https://script.google.com/macros/s/AKfycbyTk8Px4w_4TZddMPzdoEITvdIVr-wE22gDFzoH84YhLav2u0Lxn2D3oD3OkiNaytcW7g/exec", {
+			method: "POST",
+			body: params,
+			mode: "no-cors"
+		})
+		.then(function() {
+			alert("Thank you! Your message has been sent.");
+			form.reset();
+			btn.innerHTML = 'Send Message <span class="btn-arrow">→</span>';
+		})
+		.catch(function(err) {
+			console.error(err);
+			alert("Oops! Something went wrong.");
+			btn.innerHTML = 'Send Message <span class="btn-arrow">→</span>';
+		});
+	});
 }
