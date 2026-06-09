@@ -698,13 +698,13 @@ header::before {
 }
 
 .totalcard .card {
-	width: 300px;
+	width: 500px;
 	border-radius: var(--radius);
 	background: #fff;
 	padding-bottom: 20px;
-	transition: all var(--transition);
+	transition: box-shadow 0.4s ease, transform 0.4s ease;
 	box-shadow: var(--shadow-sm);
-	overflow: visible;
+	overflow: hidden;
 }
 
 .card:nth-child(1) {
@@ -799,12 +799,10 @@ header::before {
 	overflow: hidden;
 	opacity: 0;
 	padding: 0 20px;
-	transition: max-height 0.55s cubic-bezier(0.23, 1, 0.32, 1),
-	            opacity 0.4s ease,
-	            padding 0.4s ease;
+	transition: max-height 0.5s ease, opacity 0.4s ease, padding 0.4s ease;
 }
 
-.card-bio p {
+.card-bio > p {
 	font-size: 13px;
 	line-height: 20px;
 	color: var(--text-light);
@@ -812,12 +810,8 @@ header::before {
 	margin: 0;
 }
 
-.totalcard .card:hover {
-	width: 500px;
-}
-
 .totalcard .card:hover .card-bio {
-	max-height: 500px;
+	max-height: 160px;
 	opacity: 1;
 	padding: 8px 20px 4px;
 }
