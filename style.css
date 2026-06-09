@@ -704,7 +704,7 @@ header::before {
 	padding-bottom: 20px;
 	transition: box-shadow 0.4s ease, transform 0.4s ease;
 	box-shadow: var(--shadow-sm);
-	overflow: hidden;
+	overflow: visible;
 }
 
 .card:nth-child(1) {
@@ -751,6 +751,7 @@ header::before {
 	transform: scale(3.5);
 	border-radius: 0;
 	box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+	z-index: 100;
 }
 
 .card-title {
