@@ -190,3 +190,38 @@ function doPost_contact(e) {
 	return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
 }
 */
+
+fetch("https://script.google.com/macros/s/AKfycbyTk8Px4w_4TZddMPzdoEITvdIVr-wE22gDFzoH84YhLav2u0Lxn2D3oD3OkiNaytcW7g/exec", {
+    method: "POST",
+    body: params,
+    headers: { "Content-Type": "application/x-www-form-urlencoded" }
+})
+.then(res => res.text())
+.then(() => {
+    alert("Thank you! Your message has been sent.");
+    form.reset();
+    btn.innerHTML = 'Send Message <span class="btn-arrow">→</span>';
+})
+.catch(err => {
+    console.error(err);
+    alert("Oops! Something went wrong.");
+    btn.innerHTML = 'Send Message <span class="btn-arrow">→</span>';
+});
+
+
+function doPost(e) {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = [
+        new Date(),
+        e.parameter.fname,
+        e.parameter.lname,
+        e.parameter.mail,
+        e.parameter.message,
+        e.parameter.additional
+    ];
+    sheet.appendRow(data);
+
+    return ContentService
+        .createTextOutput(JSON.stringify({ result: "success" }))
+        .setMimeType(ContentService.MimeType.JSON);
+}
