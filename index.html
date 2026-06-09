@@ -371,7 +371,7 @@ document.querySelectorAll('.stats-strip').forEach(el => statObserver.observe(el)
 
 /* ---- Floating particles ---- */
 const container = document.getElementById('particles');
-for (let i = 0; i < 18; i++) {
+for (let i = 0; i < 50; i++) {
 	const p = document.createElement('span');
 	p.className = 'particle';
 	p.style.cssText = `
@@ -392,7 +392,7 @@ document.querySelector('.newsletter-form').addEventListener('submit', function(e
 	const email = document.querySelector('.txtb').value;
 	fetch('https://script.google.com/macros/s/AKfycbyeFHZmF9ziFzSkIuLvkIeL-SHc8MXsXezGRgH1OKVJbI7EMfkP5mtZhHPOeHbPnWbqQQ/exec', {
 		method: 'POST',
-		body: new URLSearchParams(`email=${email}`),
+		body: new URLSearchParams({ email: email }),
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 	})
 	.then(res => res.text())
@@ -406,18 +406,26 @@ document.querySelector('.newsletter-form').addEventListener('submit', function(e
 /* ---- Contact Form ---- */
 document.getElementById("contact-form").addEventListener("submit", function(e) {
 	e.preventDefault();
-	const formData = new FormData(this);
+	const form = this;
 	const btn = document.getElementById('csubmit');
 	btn.textContent = 'Sending...';
+
+	const params = new URLSearchParams();
+	params.append("fname",       form.fname.value);
+	params.append("lname",       form.lname.value);
+	params.append("mail",        form.mail.value);
+	params.append("message",     form.message.value);
+	params.append("additional",  form.additional.value);
+
 	fetch("https://script.google.com/macros/s/AKfycbyTk8Px4w_4TZddMPzdoEITvdIVr-wE22gDFzoH84YhLav2u0Lxn2D3oD3OkiNaytcW7g/exec", {
 		method: "POST",
-		body: new URLSearchParams(formData),
+		body: params,
 		headers: { "Content-Type": "application/x-www-form-urlencoded" }
 	})
 	.then(res => res.text())
 	.then(() => {
 		alert("Thank you! Your message has been sent.");
-		document.getElementById("contact-form").reset();
+		form.reset();
 		btn.innerHTML = 'Send Message <span class="btn-arrow">→</span>';
 	})
 	.catch(err => {
