@@ -811,9 +811,9 @@ header::before {
 }
 
 .totalcard .card:hover .card-bio {
-	max-height: 450px;
+	max-height: 600px;
 	opacity: 1;
-	padding: 8px 20px 4px;
+	padding: 8px 4px 4px;
 }
 
 .btn-ankan:hover {
