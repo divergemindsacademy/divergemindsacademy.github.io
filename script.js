@@ -313,3 +313,89 @@ if (contactForm) {
 		});
 	});
 }
+
+// ============================
+// Mentor Bio Popup
+// ============================
+document.addEventListener('DOMContentLoaded', function() {
+	var bioButtons = document.querySelectorAll('.bio-toggle');
+	var closeButtons = document.querySelectorAll('.bio-close');
+
+	// Move the bio popups outside the mentor cards so they cannot be hidden
+	// behind the next card on mobile or by transformed card containers.
+	bioButtons.forEach(function(button, index) {
+		var card = button.closest('.card');
+		if (!card) return;
+		var bio = card.querySelector('.card-bio');
+		if (!bio) return;
+
+		var themeClasses = ['bio-theme-blue', 'bio-theme-green', 'bio-theme-violet'];
+		var themeClass = themeClasses[index % themeClasses.length];
+		card.classList.add(themeClass);
+		button.classList.add(themeClass);
+		bio.classList.add(themeClass);
+
+		button._bioPopup = bio;
+		bio._bioButton = button;
+		document.body.appendChild(bio);
+	});
+
+	function closeAllBios() {
+		document.querySelectorAll('.card-bio.is-open').forEach(function(bio) {
+			bio.classList.remove('is-open');
+		});
+		document.body.classList.remove('bio-popup-open');
+		document.querySelectorAll('.bio-toggle[aria-expanded="true"]').forEach(function(btn) {
+			btn.setAttribute('aria-expanded', 'false');
+		});
+	}
+
+	bioButtons.forEach(function(button) {
+		button.addEventListener('click', function(event) {
+			event.stopPropagation();
+			var bio = button._bioPopup;
+			if (!bio) return;
+
+			var shouldOpen = !bio.classList.contains('is-open');
+			closeAllBios();
+			if (shouldOpen) {
+				bio.classList.add('is-open');
+				document.body.classList.add('bio-popup-open');
+				button.setAttribute('aria-expanded', 'true');
+			}
+		});
+	});
+
+	document.querySelectorAll('.bio-close').forEach(function(button) {
+		button.addEventListener('click', function(event) {
+			event.stopPropagation();
+			closeAllBios();
+		});
+	});
+
+	document.querySelectorAll('.card-bio').forEach(function(bio) {
+		bio.addEventListener('click', function(event) {
+			event.stopPropagation();
+		});
+	});
+
+	// If a bio popup is open, the first outside click should only close
+	// the popup. It should not also activate links/buttons underneath it.
+	document.addEventListener('click', function(event) {
+		var openBio = document.querySelector('.card-bio.is-open');
+		if (!openBio) return;
+
+		var clickedInsideBio = openBio.contains(event.target);
+		var clickedBioButton = event.target.closest && event.target.closest('.bio-toggle');
+		if (clickedInsideBio || clickedBioButton) return;
+
+		event.preventDefault();
+		event.stopImmediatePropagation();
+		closeAllBios();
+	}, true);
+
+	document.addEventListener('click', closeAllBios);
+	document.addEventListener('keydown', function(event) {
+		if (event.key === 'Escape') closeAllBios();
+	});
+});
