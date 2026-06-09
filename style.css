@@ -761,11 +761,11 @@ header::before {
 	font-family: 'Syne', sans-serif;
 }
 
-#detail {
+.detail {
 	padding-bottom: 10px;
 }
 
-#detail p {
+.detail p {
 	font-size: 14px;
 	line-height: 22px;
 	text-align: center;
@@ -773,14 +773,14 @@ header::before {
 	color: var(--text-light);
 }
 
-#detail a {
+.detail a {
 	display: flex;
 	justify-content: center;
 	margin-top: 16px;
 	text-decoration: none;
 }
 
-#detail button {
+.detail button {
 	border-radius: 10px;
 	border: 1.5px solid var(--navy);
 	padding: 9px 28px;
@@ -791,6 +791,35 @@ header::before {
 	font-weight: 600;
 	font-size: 13px;
 	color: var(--navy);
+}
+
+/* Card bio — hidden by default, slides open on hover */
+.card-bio {
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	padding: 0 20px;
+	transition: max-height 0.55s cubic-bezier(0.23, 1, 0.32, 1),
+	            opacity 0.4s ease,
+	            padding 0.4s ease;
+}
+
+.card-bio p {
+	font-size: 13px;
+	line-height: 20px;
+	color: var(--text-light);
+	text-align: center;
+	margin: 0;
+}
+
+.totalcard .card:hover {
+	width: 500px;
+}
+
+.totalcard .card:hover .card-bio {
+	max-height: 500px;
+	opacity: 1;
+	padding: 8px 20px 4px;
 }
 
 .btn-ankan:hover {
