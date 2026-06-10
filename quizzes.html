@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="shortcut icon" type="png" href="images/icon/main_justlogo.png">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Quizzes | DivergeMinds Academy</title>
+	<meta name="description" content="Attempt a free olympiad-style quiz with hints, instant feedback, and solutions after attempting.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="service-pages.css">
+</head>
+<body class="service-page-body quiz-page-body">
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav id="navbar">
+	<div class="logo slide-down-init" style="animation-delay:0.1s"><a href="index.html"><img src="images/icon/main_justlogo.png" style="width:45px;height:auto;" alt="DivergeMinds Academy logo"></a></div>
+	<ul class="nav-links slide-down-init" style="animation-delay:0.2s">
+		<li><a href="index.html">Home</a></li>
+		<li><a class="active" href="index.html#courses_section">Courses</a></li>
+		<li><a href="index.html#services_section">Services</a></li>
+		<li><a href="index.html#team_section">Team</a></li>
+		<li><a href="index.html#contactus_section">Contact</a></li>
+	</ul>
+	<div class="srch slide-down-init" style="animation-delay:0.3s"><input type="text" class="search" placeholder="Search here..."><img src="images/development/search-icon.png" alt="search" onclick="slide()"></div>
+	<a class="get-started slide-down-init" style="animation-delay:0.4s" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Get Started</a>
+	<img src="images/icon/menu-button.png" class="menu" onclick="sideMenu(0)" alt="menu">
+</nav>
+<div class="side-menu" id="side-menu">
+	<div class="close" onclick="sideMenu(1)"><img src="images/icon/close-button.png" alt="close"></div>
+	<div class="user"><img src="images/icon/main_justlogo.png" alt="DivergeMinds"><p>Diverge Minds Academy</p></div>
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a class="active" href="index.html#courses_section">Courses</a></li>
+		<li><a href="index.html#services_section">Services</a></li>
+		<li><a href="index.html#team_section">Team</a></li>
+		<li><a href="index.html#contactus_section">Contact</a></li>
+	</ul>
+</div>
+<div class="inner-nav-spacer"></div>
+
+<section class="quiz-hero">
+	<div class="quiz-hero-copy">
+		<span class="service-eyebrow">🧩 Free Quiz</span>
+		<h1>Attempt a short quiz before you <span>unlock the full course.</span></h1>
+		<p>Try five contest-style problems across geometry, sequences, number theory, counting, and polynomials. Hints are available immediately, but solutions unlock only after you make an attempt.</p>
+		<div class="quiz-hero-actions">
+			<button class="cta-primary quiz-start-btn" type="button">Attempt The Free Quiz</button>
+			<a class="cta-secondary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll for More</a>
+		</div>
+	</div>
+	<div class="quiz-hero-card">
+		<div class="quiz-score-ring"><span id="scoreNumber">0</span><small>/5 solved</small></div>
+		<p>Choose one circle for each question. You will instantly see whether your attempt is correct or needs another look.</p>
+	</div>
+</section>
+
+<main class="quiz-shell" id="free-quiz">
+	<section class="quiz-start-panel" id="quizIntro">
+		<span class="sample-chip">5 questions</span>
+		<span class="sample-chip">Hints first</span>
+		<span class="sample-chip">Solutions after attempt</span>
+		<h2>Free Quiz: Olympiad Thinking Sampler</h2>
+		<p>Click an option circle to submit your attempt for that problem. After that, the solution button becomes available.</p>
+	</section>
+
+	<section class="quiz-list" id="quizList" aria-label="Free quiz questions">
+		<article class="quiz-card" data-answer="2 cm">
+			<div class="quiz-card-head"><span class="problem-number">Q1</span><div><h2>Two parallel chords</h2><span class="difficulty easy">Easy</span></div></div>
+			<p>Two parallel chords of a circle with radius \(10\) cm have lengths \(16\) cm and \(12\) cm. If both chords lie on the same side of the centre, what is the distance between the two chords?</p>
+			<div class="chord-diagram" aria-label="Circle with two parallel chords">
+				<svg viewBox="0 0 280 210" role="img">
+					<circle cx="140" cy="105" r="86" fill="none" stroke="currentColor" stroke-width="3"/>
+					<circle cx="140" cy="105" r="4" fill="currentColor"/><text x="150" y="112">O</text>
+					<line x1="72" y1="54" x2="208" y2="54" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+					<line x1="89" y1="34" x2="191" y2="34" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+					<line x1="140" y1="105" x2="140" y2="54" stroke="rgba(13,26,178,.38)" stroke-width="2" stroke-dasharray="5 5"/>
+					<line x1="140" y1="105" x2="140" y2="34" stroke="rgba(188,23,234,.38)" stroke-width="2" stroke-dasharray="5 5"/>
+					<text x="213" y="58">16 cm</text><text x="196" y="38">12 cm</text>
+				</svg>
+			</div>
+			<div class="quiz-options" role="group" aria-label="Options for question 1">
+				<button class="option-circle" type="button" data-value="1 cm">1 cm</button>
+				<button class="option-circle" type="button" data-value="2 cm">2 cm</button>
+				<button class="option-circle" type="button" data-value="4 cm">4 cm</button>
+				<button class="option-circle" type="button" data-value="6 cm">6 cm</button>
+				<button class="option-circle" type="button" data-value="8 cm">8 cm</button>
+			</div>
+			<p class="quiz-feedback" aria-live="polite"></p>
+			<div class="sample-action-row"><button class="sample-toggle quiz-hint-btn" type="button" data-panel="q1-hint">View Hint</button><button class="sample-toggle solution-btn quiz-solution-btn" type="button" data-panel="q1-solution" disabled>View Solution</button></div>
+			<div class="sample-panel" id="q1-hint"><p>Drop perpendiculars from the centre to the chords. A perpendicular from the centre bisects a chord.</p></div>
+			<div class="sample-panel sample-solution" id="q1-solution"><p>For the chord of length \(16\), half the chord is \(8\), so its distance from the centre is \(\sqrt{10^2-8^2}=\sqrt{36}=6\) cm. For the chord of length \(12\), half the chord is \(6\), so its distance from the centre is \(\sqrt{10^2-6^2}=\sqrt{64}=8\) cm. Since the chords are on the same side of the centre, the distance between them is \(8-6=2\) cm.</p></div>
+		</article>
+
+		<article class="quiz-card" data-answer="10">
+			<div class="quiz-card-head"><span class="problem-number">Q2</span><div><h2>Alternating sequence</h2><span class="difficulty easy">Easy</span></div></div>
+			<p>Let \(x_1,x_2,\ldots,x_{50}\) be positive integers such that \(x_i+x_{i+1}=2026\) for \(1\leq i\leq49\). Let \(N=x_{25}+x_{50}\). Find the sum of the digits of \(N\).</p>
+			<div class="quiz-options" role="group" aria-label="Options for question 2">
+				<button class="option-circle" type="button" data-value="8">8</button>
+				<button class="option-circle" type="button" data-value="10">10</button>
+				<button class="option-circle" type="button" data-value="12">12</button>
+				<button class="option-circle" type="button" data-value="16">16</button>
+				<button class="option-circle" type="button" data-value="26">26</button>
+			</div>
+			<p class="quiz-feedback" aria-live="polite"></p>
+			<div class="sample-action-row"><button class="sample-toggle quiz-hint-btn" type="button" data-panel="q2-hint">View Hint</button><button class="sample-toggle solution-btn quiz-solution-btn" type="button" data-panel="q2-solution" disabled>View Solution</button></div>
+			<div class="sample-panel" id="q2-hint"><p>Compare \(x_i+x_{i+1}=2026\) with \(x_{i+1}+x_{i+2}=2026\).</p></div>
+			<div class="sample-panel sample-solution" id="q2-solution"><p>From \(x_i+x_{i+1}=2026\) and \(x_{i+1}+x_{i+2}=2026\), subtracting gives \(x_i=x_{i+2}\). Hence all odd-indexed terms are equal and all even-indexed terms are equal. Thus \(x_{25}=x_1\) and \(x_{50}=x_2\). Therefore, \(N=x_1+x_2=2026\), and the sum of the digits of \(N\) is \(2+0+2+6=10\).</p></div>
+		</article>
+
+		<article class="quiz-card" data-answer="64">
+				<div class="quiz-card-head"><span class="problem-number">Q3</span><div><h2>Groups of odd integers</h2><span class="difficulty medium">Medium</span></div></div>
+				<p>Odd positive integers are grouped as follows:</p>
+				<p>\[(1),(3,5),(7,9,11),(13,15,17,19),\ldots\]</p>
+				<p>where the \(n^{\text{th}}\) group consists of \(n\) odd integers. How many odd integers are there in the group containing the \(2026^{\text{th}}\) odd positive integer?</p>
+				<div class="quiz-options" role="group" aria-label="Options for question 3">
+					<button class="option-circle" type="button" data-value="62">62</button>
+					<button class="option-circle" type="button" data-value="63">63</button>
+					<button class="option-circle" type="button" data-value="64">64</button>
+					<button class="option-circle" type="button" data-value="65">65</button>
+					<button class="option-circle" type="button" data-value="66">66</button>
+				</div>
+				<p class="quiz-feedback" aria-live="polite"></p>
+				<div class="sample-action-row"><button class="sample-toggle quiz-hint-btn" type="button" data-panel="q3-hint">View Hint</button><button class="sample-toggle solution-btn quiz-solution-btn" type="button" data-panel="q3-solution" disabled>View Solution</button></div>
+				<div class="sample-panel" id="q3-hint"><p>After \(m\) groups, the number of odd integers used is \(1+2+\cdots+m=\frac{m(m+1)}{2}\).</p></div>
+				<div class="sample-panel sample-solution" id="q3-solution"><p>We need to locate the group containing the \(2026^{\text{th}}\) odd positive integer.</p><p>Now \(1+2+\cdots+63=\frac{63\cdot64}{2}=2016\), while \(1+2+\cdots+64=\frac{64\cdot65}{2}=2080\).</p><p>Since \(2016&lt;2026\leq2080\), the \(2026^{\text{th}}\) odd integer lies in group \(64\). Therefore, that group has \(64\) odd integers.</p></div>
+			</article>
+
+		<article class="quiz-card" data-answer="23">
+				<div class="quiz-card-head"><span class="problem-number">Q4</span><div><h2>Cute two-digit numbers</h2><span class="difficulty medium">Medium</span></div></div>
+				<p>For a positive integer \(n\), let \(s(n)\) denote the sum of the digits of \(n\). A positive integer \(n\) is called <em>cute</em> if \(s(n)\mid n\). For example, \(111\) is cute but \(123\) is not. How many two-digit cute positive integers are there?</p>
+				<div class="quiz-options" role="group" aria-label="Options for question 4">
+					<button class="option-circle" type="button" data-value="18">18</button>
+					<button class="option-circle" type="button" data-value="21">21</button>
+					<button class="option-circle" type="button" data-value="23">23</button>
+					<button class="option-circle" type="button" data-value="27">27</button>
+					<button class="option-circle" type="button" data-value="30">30</button>
+				</div>
+				<p class="quiz-feedback" aria-live="polite"></p>
+				<div class="sample-action-row"><button class="sample-toggle quiz-hint-btn" type="button" data-panel="q4-hint">View Hint</button><button class="sample-toggle solution-btn quiz-solution-btn" type="button" data-panel="q4-solution" disabled>View Solution</button></div>
+				<div class="sample-panel" id="q4-hint"><p>Write the number as \(\overline{ab}=10a+b\). The condition becomes \(a+b\mid 10a+b\), hence \(a+b\mid 9a\).</p></div>
+				<div class="sample-panel sample-solution" id="q4-solution"><p>Let the number be \(\overline{ab}=10a+b\). If it is cute, then \(a+b\mid 10a+b\), so \(a+b\mid (10a+b)-(a+b)=9a\).</p><p><strong>Case 1:</strong> If \(3\nmid(a+b)\), then \(a+b\mid a\), so \(b=0\). This gives \(10,20,40,50,70,80\), which are \(6\) numbers.</p><p><strong>Case 2:</strong> If \(3\mid(a+b)\) but \(9\nmid(a+b)\), then \(a+b\mid3a\). The possibilities give \(12,24,48\), \(21,42,84\), and \(30,60\), for a total of \(8\) numbers.</p><p><strong>Case 3:</strong> If \(9\mid(a+b)\), then \(a+b=9\) or \(18\). The case \(a+b=18\) is impossible for divisibility here, while \(a+b=9\) gives \(18,27,36,45,54,63,72,81,90\), for \(9\) numbers.</p><p>Therefore, the total number is \(6+8+9=23\).</p></div>
+			</article>
+
+		<article class="quiz-card" data-answer="4">
+				<div class="quiz-card-head"><span class="problem-number">Q5</span><div><h2>A polynomial through special values</h2><span class="difficulty hard">Hard</span></div></div>
+				<p>Given a polynomial \(P\) of degree \(7\) with real coefficients such that \(P(x)=x\cdot2^{x-1}\) for \(x=0,1,2,3,4,5,6,7\), find \(|P(-1)|\).</p>
+				<div class="quiz-options" role="group" aria-label="Options for question 5">
+					<button class="option-circle" type="button" data-value="2">2</button>
+					<button class="option-circle" type="button" data-value="4">4</button>
+					<button class="option-circle" type="button" data-value="6">6</button>
+					<button class="option-circle" type="button" data-value="8">8</button>
+					<button class="option-circle" type="button" data-value="16">16</button>
+				</div>
+				<p class="quiz-feedback" aria-live="polite"></p>
+				<div class="sample-action-row"><button class="sample-toggle quiz-hint-btn" type="button" data-panel="q5-hint">View Hint</button><button class="sample-toggle solution-btn quiz-solution-btn" type="button" data-panel="q5-solution" disabled>View Solution</button></div>
+				<div class="sample-panel" id="q5-hint"><p>Try to express \(n2^{n-1}\) using binomial coefficients:</p><p>\[1\binom{n}{1}+2\binom{n}{2}+\cdots+n\binom{n}{n}.\]</p></div>
+				<div class="sample-panel sample-solution" id="q5-solution"><p>Use the identity</p><div class="math-scroll"><p>\[1\binom{n}{1}+2\binom{n}{2}+3\binom{n}{3}+\cdots+n\binom{n}{n}=n2^{n-1}.\]</p></div><p>Define</p><p>\[Q(x)=\sum_{r=1}^{7} r\binom{x}{r}.\]</p><p>For \(x=0,1,2,\ldots,7\), this gives \(Q(x)=x2^{x-1}\), so \(P(x)-Q(x)\) has eight roots. Since \(P-Q\) has degree at most \(7\), we must have \(P(x)=Q(x)\) for all \(x\).</p><p>Therefore,</p><p>\[P(-1)=Q(-1)=\sum_{r=1}^{7} r\binom{-1}{r}.\]</p><p>Since \(\binom{-1}{r}=(-1)^r\), we get</p><div class="math-scroll"><p>\[Q(-1)=-1+2-3+4-5+6-7=-4.\]</p></div><p>Hence \(|P(-1)|=4\).</p></div>
+			</article>
+	</section>
+
+	<section class="sample-enroll-cta quiz-enroll-cta">
+		<span class="service-eyebrow">Want the full training set?</span>
+		<h2>Unlock more quizzes by enrolling in the course.</h2>
+		<p>Students get timed quizzes, guided hints, complete solutions, mentor feedback, and progressive practice for olympiad and entrance exam problem solving.</p>
+		<a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll through Google Form</a>
+	</section>
+</main>
+
+<div class="service-lock-banner" role="complementary" aria-label="Course enrollment reminder">
+	<div class="lock-icon">🔒</div>
+	<div class="lock-text"><strong>Unlock full quizzes, graded solutions, and mentor feedback</strong><span>Enroll with DivergeMinds Academy to access complete contest-style practice.</span></div>
+	<a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll Now</a>
+	<button class="lock-close" type="button" aria-label="Hide enrollment reminder">×</button>
+</div>
+<script>
+window.MathJax = {
+	tex: {
+		inlineMath: [['\\(','\\)'], ['$', '$']],
+		displayMath: [['\\[','\\]'], ['$$','$$']]
+	},
+	svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="script.js"></script>
+<script src="service-pages.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	var startBtn = document.querySelector('.quiz-start-btn');
+	var quizList = document.getElementById('quizList');
+	var scoreNumber = document.getElementById('scoreNumber');
+
+	if (startBtn && quizList) {
+		startBtn.addEventListener('click', function () {
+			quizList.classList.add('quiz-started');
+			quizList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		});
+	}
+
+	function updateScore() {
+		var correct = document.querySelectorAll('.quiz-card.is-correct').length;
+		if (scoreNumber) scoreNumber.textContent = correct;
+	}
+
+
+	document.querySelectorAll('.sample-toggle').forEach(function (button) {
+		button.addEventListener('click', function () {
+			if (button.disabled) return;
+			var box = document.getElementById(button.getAttribute('data-panel'));
+			if (!box) return;
+			var open = !box.classList.contains('is-open');
+			box.classList.toggle('is-open', open);
+			button.classList.toggle('is-active', open);
+			button.textContent = open ? button.textContent.replace('View', 'Hide') : button.textContent.replace('Hide', 'View');
+			if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([box]);
+		});
+	});
+
+	document.querySelectorAll('.quiz-card').forEach(function (card) {
+		var answer = card.getAttribute('data-answer');
+		var feedback = card.querySelector('.quiz-feedback');
+		var solutionBtn = card.querySelector('.quiz-solution-btn');
+
+		card.querySelectorAll('.option-circle').forEach(function (option) {
+			option.addEventListener('click', function () {
+				var chosen = option.getAttribute('data-value');
+				var isCorrect = chosen === answer;
+				card.classList.add('has-attempted');
+				card.classList.toggle('is-correct', isCorrect);
+				card.classList.toggle('is-wrong', !isCorrect);
+
+				card.querySelectorAll('.option-circle').forEach(function (btn) {
+					btn.classList.remove('selected', 'correct-choice', 'wrong-choice');
+					if (btn.getAttribute('data-value') === answer && card.classList.contains('has-attempted')) btn.classList.add('correct-choice');
+				});
+				option.classList.add('selected');
+				if (!isCorrect) option.classList.add('wrong-choice');
+
+				if (feedback) {
+					feedback.textContent = isCorrect ? 'Correct! The solution is now unlocked.' : 'Not quite. The solution is now unlocked—read it after checking the hint.';
+				}
+				if (solutionBtn) {
+					solutionBtn.disabled = false;
+					solutionBtn.classList.add('is-unlocked');
+				}
+				updateScore();
+			});
+		});
+	});
+});
+</script>
+</body>
+</html>
