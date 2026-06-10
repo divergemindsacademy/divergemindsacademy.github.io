@@ -78,7 +78,7 @@
 		<div class="paper-section-head">
 			<span class="paper-kicker">Set A</span>
 			<h2>Comparatively Easy Problem Set</h2>
-			<p>Not actually easy—just a better starting point before the harder set.</p>
+			<p>Not actually easy—just a better starting point before the harder set.</p> <p><b>Remember</b> that $[*]$ denotes the area of the figure $*$.</p>
 		</div>
 
 		<article class="sample-problem-card">
@@ -117,13 +117,13 @@
 			<p>Find the value of \(2025a_{2025}\).</p>
 			<div class="sample-action-row"><button class="sample-toggle" type="button" data-panel="a3-hint">View Hints</button><button class="sample-toggle solution-btn" type="button" data-panel="a3-solution">View Solution</button></div>
 			<div class="sample-panel" id="a3-hint"><p>Subtract the equation for \(n-1\) from the equation for \(n\). A simple recurrence for \(a_n\) appears.</p></div>
-			<div class="sample-panel sample-solution" id="a3-solution"><p>Since \(a_n=(a_1+\cdots+a_n)-(a_1+\cdots+a_{n-1})\), we get \(a_n=n^2a_n-(n-1)^2a_{n-1}\). Thus \((n^2-1)a_n=(n-1)^2a_{n-1}\), so \(a_n=\frac{n-1}{n+1}a_{n-1}\). Therefore \(a_{2025}=\frac{2a_1}{2025\cdot2026}=\frac{2}{2025}\), and \(2025a_{2025}=2\).</p></div>
+			<div class="sample-panel sample-solution" id="a3-solution"><p>Since <div class="math-scroll"><p>\(a_n=(a_1+\cdots+a_n)-(a_1+\cdots+a_{n-1}),\)</p></div> we get \(a_n=n^2a_n-(n-1)^2a_{n-1}\). Thus \((n^2-1)a_n=(n-1)^2a_{n-1}\), so \(a_n=\frac{n-1}{n+1}a_{n-1}\). Therefore \[a_{2025}=\frac{2a_1}{2025\cdot2026}=\frac{2}{2025},\] and \(2025a_{2025}=2\).</p></div>
 		</article>
 
 		<article class="sample-problem-card geometry-card">
 			<div class="problem-meta"><span class="pill">Geometry</span><span class="pill">Area</span></div>
 			<div class="problem-title"><span class="problem-number">A4</span><h2>Two trisectors and an intersection</h2></div>
-			<p>In the unit square \(ABCD\), points \(P,Q\) lie on \(BC\) such that \(BP=PQ=QC\). Let \(R\) be the intersection of \(AQ\) and \(DP\). If \([\triangle PQR]=\frac1N\), find \(N\).</p>
+			<p>In the unit square \(ABCD\), points \(P,Q\) lie on \(BC\) such that \(BP=PQ=QC\). Let \(R\) be the intersection of \(\overline{AQ}\) and \(\overline{DP}\). If \([\triangle PQR]=\frac1N\), find \(N\).</p>
 			<div class="square-diagram" aria-label="Unit square with P Q and R">
 				<svg viewBox="0 0 320 320" role="img">
 					<rect x="50" y="35" width="220" height="220" fill="none" stroke="currentColor" stroke-width="3"/>
@@ -135,8 +135,8 @@
 				</svg>
 			</div>
 			<div class="sample-action-row"><button class="sample-toggle" type="button" data-panel="a4-hint">View Hints</button><button class="sample-toggle solution-btn" type="button" data-panel="a4-solution">View Solution</button></div>
-			<div class="sample-panel" id="a4-hint"><p>Drop a perpendicular from \(R\) to \(BC\). By symmetry, it lands at the midpoint of \(PQ\).</p></div>
-			<div class="sample-panel sample-solution" id="a4-solution"><p>Let \(S\) be the foot of the perpendicular from \(R\) to \(BC\). By symmetry, \(PS=\frac16\). Since \(RS\parallel DC\), triangles \(PRS\) and \(PDC\) are similar. Hence \(\frac{RS}{1}=\frac{PS}{PC}=\frac{1/6}{2/3}=\frac14\). Therefore \([\triangle PQR]=\frac12\cdot\frac13\cdot\frac14=\frac1{24}\), so \(N=24\).</p></div>
+			<div class="sample-panel" id="a4-hint"><p>Drop a perpendicular from \(R\) to \(\overline{BC}\). By symmetry, it lands at the midpoint of \(\overline{PQ}\).</p></div>
+			<div class="sample-panel sample-solution" id="a4-solution"><p>Let \(S\) be the foot of the perpendicular from \(R\) to \(BC\). By symmetry, \(PS=\frac16\). Since \(\overline{RS}\parallel \overline{DC}\), triangles \(PRS\) and \(PDC\) are similar. Hence \(\frac{RS}{1}=\frac{PS}{PC}=\frac{1/6}{2/3}=\frac14\). Therefore \([\triangle PQR]=\frac12\cdot\frac13\cdot\frac14=\frac1{24}\), so \(N=24\).</p></div>
 		</article>
 
 		<article class="sample-problem-card">
@@ -181,7 +181,7 @@
 		<article class="sample-problem-card hard-card geometry-card">
 			<div class="problem-meta"><span class="pill">Geometry</span><span class="pill">Cyclic + Semicircles</span></div>
 			<div class="problem-title"><span class="problem-number">B3</span><h2>The shaded region tells the triangle</h2></div>
-			<p>Triangle \(ABC\) is right-angled at \(C\). Let \(\Omega\) be its circumcircle, and let \(D\) be a point on \(\Omega\), not on the same semicircular arc made by \(AB\) as \(C\). Semicircles are drawn on \(AC,BC,BD,AD\). If \([\triangle ABC]=24\) and the total shaded region has area \(42\), find \([\triangle ABD]\).</p>
+			<p>Triangle \(ABC\) is right-angled at \(C\). Let \(\Omega\) be its circumcircle, and let \(D\) be a point on \(\Omega\), not on the same semicircular arc (made by \(\overline{AB}\)) as \(C\). Semicircles are drawn on \(\overline{AC},\overline{BC},\overline{BD},\overline{AD}\). If \([\triangle ABC]=24\) and the total shaded region has area \(42\), find \([\triangle ABD]\).</p>
 			<div class="semicircle-diagram" aria-label="Cyclic quadrilateral with semicircle regions">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 860">
 <rect width="100%" height="100%" fill="#ffffff"/>
@@ -213,7 +213,7 @@
 				</div>
 			<div class="sample-action-row"><button class="sample-toggle" type="button" data-panel="b3-hint">View Hints</button><button class="sample-toggle solution-btn" type="button" data-panel="b3-solution">View Solution</button></div>
 			<div class="sample-panel" id="b3-hint"><p>Use the lune idea: in a right triangle, the two small semicircles together match the semicircle on the hypotenuse, except for the triangle area.</p></div>
-			<div class="sample-panel sample-solution" id="b3-solution"><p>For a right triangle, the shaded lune area built on the two legs equals the area of the triangle. So the shaded part above \(AB\) equals \([\triangle ABC]=24\). Similarly, because \(\angle ADB=90^\circ\), the shaded part below \(AB\) equals \([\triangle ABD]\). The total shaded area is \(42\), so \([\triangle ABD]=42-24=18\).</p></div>
+			<div class="sample-panel sample-solution" id="b3-solution"><p>For a right triangle, the shaded lune area built on the two legs equals the area of the triangle. So the shaded part above \(\overline{AB}\) equals \([\triangle ABC]=24\). Similarly, because \(\angle ADB=90^\circ\), the shaded part below \(AB\) equals \([\triangle ABD]\). The total shaded area is \(42\), so \([\triangle ABD]=42-24=18\).</p></div>
 		</article>
 
 		<article class="sample-problem-card hard-card">
