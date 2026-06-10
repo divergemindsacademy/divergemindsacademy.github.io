@@ -301,10 +301,31 @@
 	font-weight: 800;
 	opacity: 0.13;
 	letter-spacing: 6px;
+	z-index: 0;
+	pointer-events: none;
 }
 
-.locked-section h2, .locked-section p { color: #fff; position: relative; z-index: 1; }
+.locked-section h2,
+.locked-section p,
+.locked-section a,
+.locked-section button {
+	position: relative;
+	z-index: 2;
+}
+
+.locked-section h2,
+.locked-section p {
+	color: #fff;
+}
+
 .locked-section p { max-width: 720px; line-height: 1.75; margin: 10px 0 22px; }
+
+.locked-section .cta-primary,
+.locked-section .cta-secondary {
+	position: relative;
+	z-index: 3;
+	pointer-events: auto;
+}
 
 .service-lock-banner {
 	position: fixed;

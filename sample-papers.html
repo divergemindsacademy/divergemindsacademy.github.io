@@ -78,7 +78,7 @@
 		<div class="paper-section-head">
 			<span class="paper-kicker">Set A</span>
 			<h2>Comparatively Easy Problem Set</h2>
-			<p>Not actually easy—just a better starting point before the harder set.</p> <p><b>Remember</b> that $[*]$ denotes the area of the figure $*$.</p>
+			<p>Not actually easy—just a better starting point before the harder set.</p> <p><b>Remember:</b> $[*]$ denotes the area of the figure $*$.</p>
 		</div>
 
 		<article class="sample-problem-card">
@@ -136,7 +136,7 @@
 			</div>
 			<div class="sample-action-row"><button class="sample-toggle" type="button" data-panel="a4-hint">View Hints</button><button class="sample-toggle solution-btn" type="button" data-panel="a4-solution">View Solution</button></div>
 			<div class="sample-panel" id="a4-hint"><p>Drop a perpendicular from \(R\) to \(\overline{BC}\). By symmetry, it lands at the midpoint of \(\overline{PQ}\).</p></div>
-			<div class="sample-panel sample-solution" id="a4-solution"><p>Let \(S\) be the foot of the perpendicular from \(R\) to \(BC\). By symmetry, \(PS=\frac16\). Since \(\overline{RS}\parallel \overline{DC}\), triangles \(PRS\) and \(PDC\) are similar. Hence \(\frac{RS}{1}=\frac{PS}{PC}=\frac{1/6}{2/3}=\frac14\). Therefore \([\triangle PQR]=\frac12\cdot\frac13\cdot\frac14=\frac1{24}\), so \(N=24\).</p></div>
+			<div class="sample-panel sample-solution" id="a4-solution"><p>Let \(S\) be the foot of the perpendicular from \(R\) to \(\overline{BC}\). By symmetry, \(PS=\frac16\). Since \(\overline{RS}\parallel \overline{DC}\), triangles \(PRS\) and \(PDC\) are similar. Hence \(\frac{RS}{1}=\frac{PS}{PC}=\frac{1/6}{2/3}=\frac14\). Therefore \([\triangle PQR]=\frac12\cdot\frac13\cdot\frac14=\frac1{24}\), so \(N=24\).</p></div>
 		</article>
 
 		<article class="sample-problem-card">
@@ -164,7 +164,7 @@
 			<p>Find \(P(2026)\).</p>
 			<div class="sample-action-row"><button class="sample-toggle" type="button" data-panel="b1-hint">View Hints</button><button class="sample-toggle solution-btn" type="button" data-panel="b1-solution">View Solution</button></div>
 			<div class="sample-panel" id="b1-hint"><p>Construct \(Q(x)=(x+1)P(x)-x\). It vanishes at many consecutive integers.</p></div>
-			<div class="sample-panel sample-solution" id="b1-solution"><p>Define \(Q(x)=(x+1)P(x)-x\). Then \(Q\) has degree \(2025\), and \(Q(0)=Q(1)=\cdots=Q(2024)=0\). Hence \(Q(x)=k x(x-1)\cdots(x-2024)\). Also \(Q(-1)=1\), so \(1=k(-1)(-2)\cdots(-2025)=-k\cdot2025!\), giving \(k=-1/2025!\). Then \(Q(2026)=k\cdot2026!=-2026\). Therefore \(P(2026)=\frac{Q(2026)+2026}{2027}=0\).</p></div>
+			<div class="sample-panel sample-solution" id="b1-solution"><p>Define \(Q(x)=(x+1)P(x)-x\). Then \(Q\) has degree \(2025\), and \(Q(0)=Q(1)=\cdots=Q(2024)=0\). Hence \(Q(x)=k x(x-1)\cdots(x-2024)\). Also \(Q(-1)=1\), so <div class="math-scroll">\[1=k(-1)(-2)\cdots(-2025)=-k\cdot2025!,\]</div> giving \(k=-1/2025!.\) Then \[Q(2026)=k\cdot2026!=-2026.\] Therefore \[P(2026)=\frac{Q(2026)+2026}{2027}=0.\]</p></div>
 		</article>
 
 		<article class="sample-problem-card hard-card">
@@ -175,7 +175,7 @@
 			<p>\[R(N)=2N+5?\]</p>
 			<div class="sample-action-row"><button class="sample-toggle" type="button" data-panel="b2-hint">View Hints</button><button class="sample-toggle solution-btn" type="button" data-panel="b2-solution">View Solution</button></div>
 			<div class="sample-panel" id="b2-hint"><p>Write \(N=100a+10b+c\), where \(a,c\in\{1,2,\ldots,9\}\) and \(b\in\{0,1,\ldots,9\}\). Then compare the equation digit-by-digit through one linear equation.</p></div>
-			<div class="sample-panel sample-solution" id="b2-solution"><p>Let \(N=100a+10b+c\). Then \(R(N)=100c+10b+a\). The condition gives \(100c+10b+a=2(100a+10b+c)+5\), hence \(98c=199a+10b+5\). The right side is even only when \(a\) is odd. If \(a\ge5\), then \(199a+10b+5>98\cdot9\), impossible. So check \(a=1,3\). For \(a=1\), \(98c=204+10b\), which works only at \(c=3,b=9\), giving \(N=193\). For \(a=3\), no digit \(c\) gives a valid \(b\). Therefore exactly \(1\) such integer exists.</p></div>
+			<div class="sample-panel sample-solution" id="b2-solution"><p>Let \(N=100a+10b+c\). Then \(R(N)=100c+10b+a\). The condition gives <div class="math-scroll">\[100c+10b+a=2(100a+10b+c)+5,\]</div> hence \(98c=199a+10b+5\). <p>The right side is even only when \(a\) is odd. If \(a\ge5\), then \(199a+10b+5>98\cdot9\), impossible.</p> So check \(a=1,3\). For \(a=1\), \(98c=204+10b\), which works only at \(c=3,b=9\), giving \(N=193\). For \(a=3\), no digit \(c\) gives a valid \(b\). Therefore exactly \(1\) such integer exists.</p></div>
 		</article>
 
 		<article class="sample-problem-card hard-card geometry-card">
@@ -239,7 +239,7 @@ P(n)&=P(n-1)+2(n-1).
 				<div class="math-scroll"><p>\[P(k+1)=P(k)+2k=2+k(k-1)+2k=2+k(k+1).\]</p></div>
 				<p>The proof by induction is complete. Using this result for \(n=2026\),</p>
 				<div class="math-scroll"><p>\[N=2+2026(2026-1)=2+2026\cdot2025.\]</p></div>
-				<p>Clearly, \(N\equiv2+26\cdot25=2+650\equiv52\pmod{100}\). Therefore, the number formed by the last two digits of \(N\) is \(52\).</p>
+				<p>Clearly, <div class="math-scroll"><p>\[N\equiv2+26\cdot25=2+650\equiv52\pmod{100}.\]</div> Therefore, the number formed by the last two digits of \(N\) is \(52\).</p>
 			</div>
 		</article>
 
