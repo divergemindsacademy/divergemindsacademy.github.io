@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="shortcut icon" type="png" href="images/icon/main_justlogo.png">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Building Concepts for Competitive Exams | DivergeMinds Academy</title>
+	<meta name="description" content="Concept-building preview page for competitive exams with LaTeX support.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="service-pages.css">
+</head>
+<body class="service-page-body">
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav id="navbar">
+	<div class="logo slide-down-init" style="animation-delay:0.1s"><a href="index.html"><img src="images/icon/main_justlogo.png" style="width:45px;height:auto;" alt="DivergeMinds Academy logo"></a></div>
+	<ul class="nav-links slide-down-init" style="animation-delay:0.2s">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="index.html#courses_section">Courses</a></li>
+		<li><a class="active" href="index.html#services_section">Services</a></li>
+		<li><a href="index.html#team_section">Team</a></li>
+		<li><a href="index.html#contactus_section">Contact</a></li>
+	</ul>
+	<div class="srch slide-down-init" style="animation-delay:0.3s"><input type="text" class="search" placeholder="Search here..."><img src="images/development/search-icon.png" alt="search" onclick="slide()"></div>
+	<a class="get-started slide-down-init" style="animation-delay:0.4s" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Get Started</a>
+	<img src="images/icon/menu-button.png" class="menu" onclick="sideMenu(0)" alt="menu">
+</nav>
+<div class="side-menu" id="side-menu">
+	<div class="close" onclick="sideMenu(1)"><img src="images/icon/close-button.png" alt="close"></div>
+	<div class="user"><img src="images/icon/main_justlogo.png" alt="DivergeMinds"><p>Diverge Minds Academy</p></div>
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="index.html#courses_section">Courses</a></li>
+		<li><a href="index.html#services_section">Services</a></li>
+		<li><a href="index.html#team_section">Team</a></li>
+		<li><a href="index.html#contactus_section">Contact</a></li>
+	</ul>
+</div>
+<div class="inner-nav-spacer"></div>
+<section class="service-hero">
+	<div>
+		<span class="service-eyebrow">🏗️ Building Concepts</span>
+		<h1>Competitive exams need <span>conceptual strength.</span></h1>
+		<p>This page is a preview of how we build topics from first principles: definitions, examples, counterexamples, and problem-solving frameworks that transfer across Olympiads, ISI, CMI, and JEE.</p>
+		<div class="hero-actions"><a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll in Concept Classes</a><a class="cta-secondary" href="course-materials.html">View Materials</a></div>
+	</div>
+	<div class="hero-panel"><div class="formula-card">Concept checklist:<br>\[\text{Definition}\to\text{Example}\to\text{Technique}\to\text{Proof}\]</div></div>
+</section>
+<main class="page-shell">
+	<article class="section-card"><h2>How we teach a concept</h2><p>Instead of memorizing formulas, students learn when a formula is useful, why it is true, and how it changes under constraints. For example, the identity \((a+b)^2=a^2+2ab+b^2\) becomes a counting story, an area story, and an inequality tool.</p></article>
+	<div class="resource-grid">
+		<div class="resource-tile"><strong>Number Theory</strong><p>Divisibility, modular arithmetic, Euclidean algorithm, valuations, and Diophantine equations. Example: if \(a\equiv b\pmod m\), then \(a^k\equiv b^k\pmod m\).</p></div>
+		<div class="resource-tile"><strong>Algebra</strong><p>Identities, factorization, inequalities, sequences, and functional equations. Students learn to transform expressions like \(x^2+y^2\geq 2xy\) into problem-solving tools.</p></div>
+		<div class="resource-tile"><strong>Geometry</strong><p>Angle chasing, congruence, similarity, cyclic quadrilaterals, power of a point, and coordinate geometry. We connect diagrams to proof structure.</p></div>
+		<div class="resource-tile"><strong>Combinatorics</strong><p>Counting, bijections, pigeonhole principle, invariants, parity, and recursion. Example recurrence: \(F_n=F_{n-1}+F_{n-2}\).</p></div>
+	</div>
+	<article class="material-card"><h2>Sample mini-lesson: Modular arithmetic</h2><p>When a problem asks about divisibility, residues often simplify the situation. To prove \(n^5-n\) is divisible by \(5\), check residues \(n\equiv 0,1,2,3,4\pmod 5\). This turns a statement about infinitely many integers into five small cases.</p><p>Core idea: \[\text{large number} = \text{quotient}\times m + \text{remainder}.\]</p></article>
+	<div class="locked-section"><h2>🔒 Full concept modules are course-only</h2><p>Enroll to access structured concept notes, topic-wise exercises, doubt sessions, and guided exam preparation roadmaps.</p><a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll Now</a></div>
+</main>
+<div class="service-lock-banner" role="complementary" aria-label="Course enrollment reminder">
+	<div class="lock-icon">🔒</div>
+	<div class="lock-text"><strong>Unlock full courses, solutions, and mentor feedback</strong><span>Enroll with DivergeMinds Academy to access guided batches and complete material.</span></div>
+	<a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll Now</a>
+	<button class="lock-close" type="button" aria-label="Hide enrollment reminder">×</button>
+</div>
+<script>
+window.MathJax = {
+	tex: {
+		inlineMath: [['\\(','\\)'], ['$', '$']],
+		displayMath: [['\\[','\\]'], ['$$','$$']]
+	},
+	svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="script.js"></script>
+<script src="service-pages.js"></script>
+</body>
+</html>

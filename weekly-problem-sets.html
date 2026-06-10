@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="shortcut icon" type="png" href="images/icon/main_justlogo.png">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Weekly Problem Sets | DivergeMinds Academy</title>
+	<meta name="description" content="Weekly olympiad-style math problem sets with LaTeX and clickable hints.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="service-pages.css">
+</head>
+<body class="service-page-body">
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav id="navbar">
+	<div class="logo slide-down-init" style="animation-delay:0.1s"><a href="index.html"><img src="images/icon/main_justlogo.png" style="width:45px;height:auto;" alt="DivergeMinds Academy logo"></a></div>
+	<ul class="nav-links slide-down-init" style="animation-delay:0.2s">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="index.html#courses_section">Courses</a></li>
+		<li><a class="active" href="index.html#services_section">Services</a></li>
+		<li><a href="index.html#team_section">Team</a></li>
+		<li><a href="index.html#contactus_section">Contact</a></li>
+	</ul>
+	<div class="srch slide-down-init" style="animation-delay:0.3s"><input type="text" class="search" placeholder="Search here..."><img src="images/development/search-icon.png" alt="search" onclick="slide()"></div>
+	<a class="get-started slide-down-init" style="animation-delay:0.4s" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Get Started</a>
+	<img src="images/icon/menu-button.png" class="menu" onclick="sideMenu(0)" alt="menu">
+</nav>
+<div class="side-menu" id="side-menu">
+	<div class="close" onclick="sideMenu(1)"><img src="images/icon/close-button.png" alt="close"></div>
+	<div class="user"><img src="images/icon/main_justlogo.png" alt="DivergeMinds"><p>Diverge Minds Academy</p></div>
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="index.html#courses_section">Courses</a></li>
+		<li><a href="index.html#services_section">Services</a></li>
+		<li><a href="index.html#team_section">Team</a></li>
+		<li><a href="index.html#contactus_section">Contact</a></li>
+	</ul>
+</div>
+<div class="inner-nav-spacer"></div>
+<section class="service-hero">
+	<div>
+		<span class="service-eyebrow">📚 Weekly Problem Sets</span>
+		<h1>Structured practice for <span>serious problem solvers.</span></h1>
+		<p>Weekly sets combine number theory, algebra, geometry, and combinatorics. They are meant to be attempted slowly, discussed deeply, and written as clean proofs.</p>
+		<div class="hero-actions"><a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll for Full Sets</a><a class="cta-secondary" href="daily-brain-teasers.html">Daily Teasers</a></div>
+	</div>
+	<div class="hero-panel"><div class="formula-card">This week’s theme:<br>\[\text{Invariants}+\text{Extremal Thinking}\]</div></div>
+</section>
+<main class="page-shell"><div class="content-grid"><section class="main-column">
+	<article class="section-card"><h2>Sample Set: Week 1</h2><p>Attempt these in order. Write complete arguments, not just final answers. The hint buttons reveal small nudges only.</p></article>
+	<article class="problem-card"><div class="problem-meta"><span class="pill">Algebra</span><span class="pill">Medium</span></div><div class="problem-title"><span class="problem-number">1</span><h2>A symmetric expression</h2></div><p>Let \(x,y,z>0\) and \(xyz=1\). Prove that \[\frac{x}{x^2+x+1}+\frac{y}{y^2+y+1}+\frac{z}{z^2+z+1}\leq 1.\]</p><div class="hint-row"><button class="hint-toggle" data-hint="w-hint-1" aria-expanded="false">View hint</button></div><div class="hint-box" id="w-hint-1"><p>Try substituting \(x=\frac{a}{b}\), \(y=\frac{b}{c}\), \(z=\frac{c}{a}\). Then look for a common denominator or a known inequality.</p><button class="hint-hide" type="button">Hide</button></div></article>
+	<article class="problem-card"><div class="problem-meta"><span class="pill">Number Theory</span><span class="pill">Medium</span></div><div class="problem-title"><span class="problem-number">2</span><h2>Consecutive divisibility</h2></div><p>Prove that for every integer \(n\), the number \(n^5-n\) is divisible by \(30\).</p><div class="hint-row"><button class="hint-toggle" data-hint="w-hint-2" aria-expanded="false">View hint</button></div><div class="hint-box" id="w-hint-2"><p>It is enough to prove divisibility by \(2\), \(3\), and \(5\). For \(5\), consider residues modulo \(5\).</p><button class="hint-hide" type="button">Hide</button></div></article>
+	<article class="problem-card"><div class="problem-meta"><span class="pill">Geometry</span><span class="pill">Proof</span></div><div class="problem-title"><span class="problem-number">3</span><h2>Equal chords, equal insight</h2></div><p>In a circle, points \(A,B,C,D\) lie in this order and \(AB=CD\). Prove that \(\angle ACB=\angle CAD\).</p><div class="hint-row"><button class="hint-toggle" data-hint="w-hint-3" aria-expanded="false">View hint</button></div><div class="hint-box" id="w-hint-3"><p>Equal chords subtend equal angles in the same circle. Identify the chord seen by each angle.</p><button class="hint-hide" type="button">Hide</button></div></article>
+	<article class="problem-card"><div class="problem-meta"><span class="pill">Combinatorics</span><span class="pill">Challenge</span></div><div class="problem-title"><span class="problem-number">4</span><h2>Coloring a row</h2></div><p>A row of \(10\) squares is colored red, blue, or green. How many colorings have no two adjacent squares of the same color and use all three colors at least once?</p><div class="hint-row"><button class="hint-toggle" data-hint="w-hint-4" aria-expanded="false">View hint</button></div><div class="hint-box" id="w-hint-4"><p>First count all colorings with no equal adjacent colors. Then subtract colorings that use only two colors.</p><button class="hint-hide" type="button">Hide</button></div></article>
+	<div class="locked-section"><h2>🔒 Want the complete weekly PDF?</h2><p>Enroll to receive full weekly assignments, answer keys released after submission, and mentor feedback on proof-writing.</p><a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll to Access</a></div>
+</section><aside class="side-column">
+	<div class="sidebar-card">
+		<h3>How to use this page</h3>
+		<p>Try the problem first. Open the hint only after you have spent a few minutes exploring examples, diagrams, or modular patterns.</p>
+		<a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll in Courses</a>
+		<p class="math-note">LaTeX is enabled: write expressions like <br>\(a^2+b^2=c^2\) or display equations with <br>\[x^2+y^2=z^2\]</p>
+	</div>
+</aside></div></main>
+<div class="service-lock-banner" role="complementary" aria-label="Course enrollment reminder">
+	<div class="lock-icon">🔒</div>
+	<div class="lock-text"><strong>Unlock full courses, solutions, and mentor feedback</strong><span>Enroll with DivergeMinds Academy to access guided batches and complete material.</span></div>
+	<a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll Now</a>
+	<button class="lock-close" type="button" aria-label="Hide enrollment reminder">×</button>
+</div>
+<script>
+window.MathJax = {
+	tex: {
+		inlineMath: [['\\(','\\)'], ['$', '$']],
+		displayMath: [['\\[','\\]'], ['$$','$$']]
+	},
+	svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="script.js"></script>
+<script src="service-pages.js"></script>
+</body>
+</html>

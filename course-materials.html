@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="shortcut icon" type="png" href="images/icon/main_justlogo.png">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Course Materials | DivergeMinds Academy</title>
+	<meta name="description" content="Advanced course materials for mathematical problem solving, olympiad techniques, and competitive exam preparation.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="service-pages.css">
+</head>
+<body class="service-page-body">
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav id="navbar">
+	<div class="logo slide-down-init" style="animation-delay:0.1s"><a href="index.html"><img src="images/icon/main_justlogo.png" style="width:45px;height:auto;" alt="DivergeMinds Academy logo"></a></div>
+	<ul class="nav-links slide-down-init" style="animation-delay:0.2s">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="index.html#courses_section">Courses</a></li>
+		<li><a class="active" href="index.html#services_section">Services</a></li>
+		<li><a href="index.html#team_section">Team</a></li>
+		<li><a href="index.html#contactus_section">Contact</a></li>
+	</ul>
+	<div class="srch slide-down-init" style="animation-delay:0.3s"><input type="text" class="search" placeholder="Search here..."><img src="images/development/search-icon.png" alt="search" onclick="slide()"></div>
+	<a class="get-started slide-down-init" style="animation-delay:0.4s" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Get Started</a>
+	<img src="images/icon/menu-button.png" class="menu" onclick="sideMenu(0)" alt="menu">
+</nav>
+<div class="side-menu" id="side-menu">
+	<div class="close" onclick="sideMenu(1)"><img src="images/icon/close-button.png" alt="close"></div>
+	<div class="user"><img src="images/icon/main_justlogo.png" alt="DivergeMinds"><p>Diverge Minds Academy</p></div>
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="index.html#courses_section">Courses</a></li>
+		<li><a href="index.html#services_section">Services</a></li>
+		<li><a href="index.html#team_section">Team</a></li>
+		<li><a href="index.html#contactus_section">Contact</a></li>
+	</ul>
+</div>
+<div class="inner-nav-spacer"></div>
+<section class="service-hero">
+	<div>
+		<span class="service-eyebrow">📄 Course Materials</span>
+		<h1>Course materials that teach <span>how to think.</span></h1>
+		<p>Our notes are not meant to be formula sheets. They are written as guided mathematical conversations: how to translate a problem into an equation, how to recognize hidden structure, how to choose the right restriction, and how to turn a difficult olympiad-style question into a sequence of small decisions.</p>
+		<div class="hero-actions"><a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Request Access</a><a class="cta-secondary" href="building-concepts-competitive-exams.html">Build Concepts</a></div>
+	</div>
+	<div class="hero-panel"><div class="formula-card">A method is stronger than a memory:<br>\[ab+a+b=N\quad \Longrightarrow \quad (a+1)(b+1)=N+1\]<br><span>One small rewrite can turn a messy equation into a factorization problem.</span></div></div>
+</section>
+<main class="page-shell">
+	<article class="section-card"><h2>What makes these materials different?</h2><p>A difficult problem usually does not become easier because we know more formulas. It becomes easier when we know what to look for. The course materials are built around this idea. Each page introduces one powerful technique, explains the thought process behind it, and then shows how the same idea appears in number theory, algebra, combinatorics, geometry, and contest problems.</p><p>Students will see not only the final solution, but also the decisions that lead to it: when to compute a total, when to introduce variables, when to factor, when to use bounds, when to check parity, when to list cases, and when to stop listing and use structure.</p></article>
+	<div class="resource-grid">
+		<div class="resource-tile"><strong>Technique-first notes</strong><p>Each note begins with a problem-solving idea such as factoring, bounding, invariants, parity, modular arithmetic, extremal choice, or double counting.</p></div>
+		<div class="resource-tile"><strong>Guided solution paths</strong><p>Instead of jumping to the answer, examples are broken into questions that train students to ask the next useful question themselves.</p></div>
+		<div class="resource-tile"><strong>Harder follow-up problems</strong><p>Every concept is followed by non-routine questions where students must decide which tool to use, not merely repeat a formula.</p></div>
+		<div class="resource-tile"><strong>Hints before solutions</strong><p>Hints are designed to preserve discovery. They point toward the key idea without immediately giving away the full solution.</p></div>
+	</div>
+	<article class="material-card"><h2>Featured technique: Simon's Favorite Factoring Trick</h2><p>Some equations contain an expression like \(ab+a+b\). At first it may not look factorable, because there is no single common factor. But if we add \(1\), the expression becomes</p><p>\[ab+a+b+1=(a+1)(b+1).\]</p><p>This simple move is often called <strong>Simon's Favorite Factoring Trick</strong>. The trick is not just “add 1.” The deeper idea is: if an expression is almost a product, complete it into a product. Once we have a product, we can use factor pairs, divisibility, parity, size restrictions, and prime factorization.</p><p>For example, an equation like \(ab+a+b=351\) is much more useful after writing</p><p>\[(a+1)(b+1)=352.\]</p><p>Now the problem is no longer about two unknowns floating freely. It is about two integer factors of \(352\), and that is a much more controlled situation.</p></article>
+	<article class="problem-card"><div class="problem-meta"><span class="pill">Number Theory</span><span class="pill">Algebraic Factoring</span><span class="pill">Olympiad Style</span></div><div class="problem-title"><span class="problem-number">1</span><h2>Guided problem: turning words into factors</h2></div><p>I choose two different numbers \(a\) and \(b\) from the set \(\{1,2,3,\ldots,26\}\). It turns out that their product \(ab\) is equal to the sum of the remaining \(24\) numbers. What is the value of \(|a-b|\)?</p><div class="hint-row"><button class="hint-toggle" type="button" data-hint="cm-hint-1" aria-expanded="false">View hint</button><button class="hint-toggle" type="button" data-hint="cm-hint-2" aria-expanded="false">View next idea</button><button class="hint-toggle" type="button" data-hint="cm-hint-3" aria-expanded="false">View final push</button></div><div class="hint-box" id="cm-hint-1"><p>Start by finding the sum of all numbers from \(1\) to \(26\). Then express “the sum of the remaining \(24\) numbers” in terms of \(a\) and \(b\).</p><button class="hint-hide" type="button">Hide</button></div><div class="hint-box" id="cm-hint-2"><p>The total is \(1+2+\cdots+26=351\). So the condition becomes \(ab=351-a-b\), or \(ab+a+b=351\). This is exactly the kind of expression where Simon's Favorite Factoring Trick can help.</p><button class="hint-hide" type="button">Hide</button></div><div class="hint-box" id="cm-hint-3"><p>Add \(1\) to both sides: \((a+1)(b+1)=352\). Since \(352=2^5\cdot 11\), and \(a+1,b+1\) are between \(2\) and \(27\), look carefully at which factor pairs are possible.</p><button class="hint-hide" type="button">Hide</button></div></article>
+	<article class="material-card"><h2>Solution path: what should you notice?</h2><p>The first important step is not factoring. It is translation. The words say that the product of the two chosen numbers equals the sum of all the numbers that were not chosen. Since</p><p>\[1+2+3+\cdots+26=\frac{26\cdot 27}{2}=351,\]</p><p>the sum of the remaining numbers is \(351-a-b\). Therefore</p><p>\[ab=351-a-b,\]</p><p>so</p><p>\[ab+a+b=351.\]</p><p>Now the expression on the left is almost factorable. Adding \(1\) gives</p><p>\[ab+a+b+1=352,\]</p><p>which factors as</p><p>\[(a+1)(b+1)=352.\]</p><p>This is the key transformation. We have changed a word problem into a factor-pair problem. Since \(a\) and \(b\) are chosen from \(1\) to \(26\), both \(a+1\) and \(b+1\) must lie between \(2\) and \(27\). Also,</p><p>\[352=2^5\cdot 11=32\cdot 11=22\cdot 16.\]</p><p>The pair \((11,32)\) is impossible because \(32\) is too large. The possible pair in range is \((16,22)\). Hence \(a,b\) are \(15,21\) in some order, and</p><p>\[|a-b|=|21-15|=6.\]</p><p>The lesson is more important than the answer: once an integer problem becomes a product equation, restrictions such as size, divisibility, parity, and factorization become powerful.</p></article>
+	<article class="material-card"><h2>Problem-solving ideas used in this example</h2><ul class="clean-list"><li><strong>Translate before trying tricks.</strong> The equation \(ab=351-a-b\) comes directly from the wording. Without this step, the trick has nowhere to act.</li><li><strong>Complete the product.</strong> Expressions like \(xy+x+y\), \(xy+mx+ny\), and sometimes even quadratic-looking expressions can often be completed into a factorization.</li><li><strong>Use every restriction.</strong> The condition \(1\leq a,b\leq 26\) eliminates factor pairs that are mathematically possible but impossible in the problem.</li><li><strong>Look for strong divisibility information.</strong> Since \(352\) contains a factor of \(11\), one of \(a+1\) or \(b+1\) must carry that factor. This reduces the search quickly.</li><li><strong>Check at the end.</strong> A beautiful factorization still needs verification: \(15\cdot21=315\), and \(351-15-21=315\).</li></ul></article>
+	<article class="problem-card"><div class="problem-meta"><span class="pill">Practice Extension</span><span class="pill">No Multiple Choice</span></div><div class="problem-title"><span class="problem-number">2</span><h2>Try next: the same trick in disguise</h2></div><p>Find all pairs of positive integers \((x,y)\) such that</p><p>\[xy+2x+3y=71.\]</p><div class="hint-row"><button class="hint-toggle" type="button" data-hint="cm-hint-4" aria-expanded="false">View hint</button><button class="hint-toggle" type="button" data-hint="cm-hint-5" aria-expanded="false">View stronger hint</button></div><div class="hint-box" id="cm-hint-4"><p>Do not try random values first. Try to complete the left side into a product. What happens if you look at \((x+3)(y+2)\)?</p><button class="hint-hide" type="button">Hide</button></div><div class="hint-box" id="cm-hint-5"><p>We have \((x+3)(y+2)=xy+2x+3y+6\). Therefore the equation is equivalent to \((x+3)(y+2)=77\). Now use factor pairs of \(77\) and remember that \(x,y\) must be positive.</p><button class="hint-hide" type="button">Hide</button></div></article>
+	<article class="problem-card"><div class="problem-meta"><span class="pill">Challenge</span><span class="pill">Bounding + Factoring</span></div><div class="problem-title"><span class="problem-number">3</span><h2>Challenge problem</h2></div><p>Let \(m\) and \(n\) be positive integers with \(m\lt n\). Suppose</p><p>\[mn+m+n=2026.\]</p><p>Find all possible values of \(n-m\).</p><div class="hint-row"><button class="hint-toggle" type="button" data-hint="cm-hint-6" aria-expanded="false">View hint</button><button class="hint-toggle" type="button" data-hint="cm-hint-7" aria-expanded="false">View final hint</button></div><div class="hint-box" id="cm-hint-6"><p>This is a direct Simon's Favorite Factoring Trick situation. Add \(1\) and factor.</p><button class="hint-hide" type="button">Hide</button></div><div class="hint-box" id="cm-hint-7"><p>You should get \((m+1)(n+1)=2027\). Now factor \(2027\), then remember that \(m<n\). Not every factor pair gives a positive ordered pair.</p><button class="hint-hide" type="button">Hide</button></div></article>
+	<article class="material-card"><h2>How to use this page while studying</h2><p>Read the technique box first, but do not memorize it mechanically. Then attempt the guided problem with only the first hint. If you are stuck, open the next hint and continue. After reading the solution path, close the page and try to reproduce the argument from memory. The goal is to learn the sequence of moves:</p><p>\[\text{words}\rightarrow \text{equation}\rightarrow \text{near product}\rightarrow \text{factor pairs}\rightarrow \text{restrictions}\rightarrow \text{answer}.\]</p><p>This is the style of the full course material: each topic is built around a powerful method, followed by harder problems where students learn when and why the method applies.</p></article>
+	<div class="locked-section"><h2>🔒 Full worksheets and solution notes are for enrolled students</h2><p>Enroll to receive complete course PDFs, graded olympiad problem sets, detailed solution writeups, revision sheets, and mentor-guided discussions.</p><a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll for Access</a></div>
+</main>
+<div class="service-lock-banner" role="complementary" aria-label="Course enrollment reminder">
+	<div class="lock-icon">🔒</div>
+	<div class="lock-text"><strong>Unlock full courses, solutions, and mentor feedback</strong><span>Enroll with DivergeMinds Academy to access guided batches and complete material.</span></div>
+	<a class="cta-primary" href="https://forms.gle/RGhjmmsEFkusNJKN7" target="_blank" rel="noopener">Enroll Now</a>
+	<button class="lock-close" type="button" aria-label="Hide enrollment reminder">×</button>
+</div>
+<script>
+window.MathJax = {
+	tex: {
+		inlineMath: [['\\(','\\)'], ['$', '$']],
+		displayMath: [['\\[','\\]'], ['$$','$$']]
+	},
+	svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="script.js"></script>
+<script src="service-pages.js"></script>
+</body>
+</html>
