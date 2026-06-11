@@ -201,14 +201,16 @@ nav ul li a:hover,
 
 .hero-text-animate {
 	opacity: 0;
+	font-optical-sizing: var(--dark);
+	color: var(--text);
 	transform: translateX(-60px);
-	animation: heroSlideIn 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.5s forwards;
+	animation: heroSlideIn 3.5s cubic-bezier(0.23, 4, 0.32, 1) 0.5s forwards;
 }
 
 .hero-img-animate {
 	opacity: 0;
 	transform: translateX(60px);
-	animation: heroSlideIn 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.7s forwards;
+	animation: heroSlideIn 3.5s cubic-bezier(0.23, 1, 0.32, 1) 0.5s forwards;
 }
 
 @keyframes heroSlideIn {
@@ -349,10 +351,10 @@ header::before {
 
 @keyframes floatParticle {
 	0%, 100% {
-		transform: translateY(0) scale(2);
+		transform: translateY(0) scale(3);
 	}
 	50% {
-		transform: translateY(-30px) scale(3.15);
+		transform: translateY(-80px) scale(3.15);
 	}
 }
 
@@ -708,10 +710,10 @@ header::before {
 
 @keyframes courseCircleFloat {
 	0%, 100% {
-		transform: translateY(0) scale(1);
+		transform: translateY(0) scale(1.8);
 	}
 	50% {
-		transform: translateY(-16px) scale(1.03);
+		transform: translateY(-16px) scale(2.3);
 	}
 }
 

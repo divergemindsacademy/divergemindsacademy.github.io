@@ -239,17 +239,18 @@ document.querySelectorAll('.stats-strip').forEach(function(el) {
 // ============================
 var container = document.getElementById('particles');
 if (container) {
-	for (var pi = 0; pi < 50; pi++) {
+	for (var pi = 0; pi < 100; pi++) {
 		var p = document.createElement('span');
 		p.className = 'particle';
+		n = Math.random();
 		p.style.cssText =
 			'left:' + (Math.random()*100) + '%;' +
 			'top:' + (Math.random()*100) + '%;' +
-			'width:' + (4 + Math.random()*8) + 'px;' +
-			'height:' + (4 + Math.random()*8) + 'px;' +
-			'animation-delay:' + (Math.random()*6) + 's;' +
-			'animation-duration:' + (5 + Math.random()*8) + 's;' +
-			'opacity:' + (0.15 + Math.random()*0.3) + ';';
+			'width:' + (4 + n*10) + 'px;' +
+			'height:' + (4 + n*11) + 'px;' +
+			'animation-delay:' + (Math.random()*5) + 's;' +
+			'animation-duration:' + (5 + Math.random()*20) + 's;' +
+			'opacity:' + (0.01 + Math.random()*0.5) + ';';
 		container.appendChild(p);
 	}
 }
